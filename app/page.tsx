@@ -7,7 +7,6 @@ import {
   CheckCircle2,
   HeartHandshake,
   Leaf,
-  Phone,
   ShieldCheck,
   Sparkles,
   SunMedium,
@@ -80,89 +79,66 @@ export default function Home() {
 
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-[#F4F1E8] pt-24 text-ink">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_78%_22%,rgba(169,184,164,0.42),transparent_26rem),radial-gradient(circle_at_18%_82%,rgba(199,168,107,0.22),transparent_24rem)]" />
-        <div className="container-pad grid min-h-[calc(100vh-3rem)] gap-10 py-12 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
-          <FloatIn>
-            <div className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-forest shadow-card">
-              <Sparkles size={14} className="text-gold" />
-              Healing Foundation Wellness Residence
-            </div>
-            <h1 className="mt-8 max-w-3xl font-serif text-6xl font-semibold leading-[0.86] text-forest sm:text-8xl lg:text-[8.4rem]">
-              Care,
-              <span className="block italic text-gold">softened.</span>
-            </h1>
-            <p className="mt-7 max-w-xl text-lg leading-8 text-forest/72">
-              A private rehabilitation centre for families who need recovery support that feels clear, humane, and steady from the very first conversation.
-            </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link href="/contact" className="forest-button">
-                Begin private enquiry
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-              <a
-                href={siteConfig.phoneHref}
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-forest/20 bg-white/80 px-7 text-sm font-bold text-forest shadow-card transition hover:-translate-y-0.5 hover:border-gold"
-              >
-                <Phone size={16} />
-                Call now
-              </a>
-            </div>
-          </FloatIn>
+      <section className="bg-[#F4F1E8] px-3 pb-4 pt-24 text-ink sm:px-4">
+        <div className="relative isolate min-h-[calc(100vh-7rem)] overflow-hidden rounded-[2rem] bg-forest text-pearl shadow-soft">
+          <Image
+            src="/images/centre/exterior-night-wide.jpeg"
+            alt="Healing Foundation residence at night"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(9,20,15,0.88)_0%,rgba(9,20,15,0.56)_42%,rgba(9,20,15,0.12)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_42%,rgba(199,168,107,0.18),transparent_22rem)]" />
 
-          <div className="relative min-h-[620px]">
-            <Reveal className="absolute left-0 top-8 w-[58%] rotate-[-4deg] rounded-[2rem] border border-forest/10 bg-white p-3 shadow-soft">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[1.45rem]">
-                <Image
-                  src="/images/centre/front-sign.jpeg"
-                  alt="Healing Foundation sign outside the centre"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 32vw, 70vw"
-                  className="object-cover"
-                />
+          <div className="relative z-10 flex min-h-[calc(100vh-7rem)] flex-col justify-between p-6 sm:p-10">
+            <FloatIn className="max-w-3xl pt-10 lg:pt-16">
+              <div className="inline-flex items-center gap-2 rounded-full border border-pearl/20 bg-pearl/12 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-sand backdrop-blur-xl">
+                <Sparkles size={14} />
+                Healing Foundation Wellness Residence
               </div>
-              <p className="px-3 py-4 text-sm font-bold text-forest">Actual centre signage</p>
-            </Reveal>
+              <h1 className="mt-8 max-w-4xl font-serif text-5xl font-semibold leading-[0.96] tracking-[-0.03em] text-pearl sm:text-7xl lg:text-[5.8rem]">
+                The rehab centre, re-humanized
+              </h1>
+              <p className="mt-6 max-w-xl text-lg leading-8 text-pearl/82">
+                Private residential recovery for families who need care that is calm, structured, and deeply human.
+              </p>
+            </FloatIn>
 
-            <Reveal className="absolute right-0 top-0 w-[64%] rotate-[3deg] rounded-[2.4rem] border border-forest/10 bg-white p-3 shadow-soft">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-[1.8rem]">
-                <Image
-                  src="/images/centre/exterior-day-team.jpeg"
-                  alt="Healing Foundation residence exterior"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 36vw, 80vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="grid grid-cols-3 gap-2 px-3 py-4">
-                {[
-                  ["24/7", "support"],
-                  ["1:1", "planning"],
-                  ["Private", "setting"]
-                ].map(([value, label]) => (
-                  <div key={label} className="rounded-2xl bg-cream p-3 text-center">
-                    <p className="font-serif text-2xl font-semibold text-forest">{value}</p>
-                    <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-forest/55">{label}</p>
+            <div className="grid gap-5 lg:grid-cols-[0.8fr_0.85fr_0.65fr] lg:items-end">
+              <Reveal className="hidden rounded-[1.4rem] border border-gold/70 bg-ink/40 p-2 shadow-soft backdrop-blur-xl sm:block">
+                <div className="relative aspect-video overflow-hidden rounded-[1rem]">
+                  <Image
+                    src="/images/centre/wellness-yoga-hall.jpeg"
+                    alt="Wellness routine at Healing Foundation"
+                    fill
+                    sizes="(min-width: 1024px) 28vw, 80vw"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center bg-ink/20">
+                    <span className="grid h-16 w-16 place-items-center rounded-full bg-gold text-xl font-black text-ink shadow-glow">
+                      ▶
+                    </span>
                   </div>
-                ))}
-              </div>
-            </Reveal>
+                </div>
+              </Reveal>
 
-            <Reveal className="absolute bottom-8 left-[30%] w-[48%] rounded-[2rem] border border-forest/10 bg-white p-3 shadow-soft">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-[1.45rem]">
-                <Image
-                  src="/images/centre/counselling-room.jpeg"
-                  alt="Private counselling room"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 27vw, 70vw"
-                  className="object-cover"
-                />
-              </div>
-              <p className="px-3 py-4 text-sm font-bold text-forest">Private counselling space</p>
-            </Reveal>
+              <Reveal className="rounded-[1.4rem] border border-pearl/15 bg-pearl/92 p-5 text-forest shadow-soft backdrop-blur-xl">
+                <p className="font-serif text-3xl font-semibold">Start with one private call.</p>
+                <p className="mt-2 text-sm font-bold uppercase tracking-[0.16em] text-forest/55">
+                  No pressure · confidential guidance
+                </p>
+              </Reveal>
+
+              <Reveal className="rounded-[1.4rem] border border-pearl/15 bg-ink/50 p-5 text-pearl backdrop-blur-xl">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-sand">Admissions</p>
+                <p className="mt-2 text-sm text-pearl/70">24/7 support available</p>
+                <Link href="/contact" className="mt-4 inline-flex h-12 w-full items-center justify-center rounded-full bg-gold px-6 text-sm font-black uppercase tracking-[0.08em] text-ink transition hover:bg-[#D8BB7D]">
+                  Enquire now
+                </Link>
+              </Reveal>
+            </div>
           </div>
         </div>
       </section>
