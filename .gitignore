@@ -1,0 +1,10 @@
+.next
+node_modules
+.pnpm-store
+.agents
+.codex
+out
+dist
+.env*.local
+.vercel
+*.log
