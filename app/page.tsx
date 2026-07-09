@@ -1,253 +1,415 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Quote, ShieldCheck } from "lucide-react";
-import { AnimatedStats } from "@/components/AnimatedStats";
+import {
+  ArrowRight,
+  BadgeCheck,
+  CalendarCheck,
+  CheckCircle2,
+  HeartHandshake,
+  Phone,
+  ShieldCheck,
+  Sparkles,
+  Stethoscope,
+  Users
+} from "lucide-react";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { FloatIn, Reveal } from "@/components/Motion";
 import { RecoveryTimeline } from "@/components/RecoveryTimeline";
 import { SectionHeading } from "@/components/SectionHeading";
-import { StorySection } from "@/components/StorySection";
 import {
   facilities,
   faqs,
   hero,
-  inclusions,
+  processSteps,
   siteConfig,
   testimonials,
   treatments,
   trustPoints
 } from "@/data/site";
 
+const editionCards = [
+  {
+    title: "Private admission planning",
+    text: "A discreet first conversation, suitability guidance, and a calm next-step plan for the family.",
+    image: "/images/centre/consultation-office.jpeg",
+    icon: ShieldCheck
+  },
+  {
+    title: "Therapy-led daily rhythm",
+    text: "Individual therapy, group work, wellness routines, and guided accountability across the day.",
+    image: "/images/centre/group-therapy-session.jpeg",
+    icon: Stethoscope
+  },
+  {
+    title: "Residential recovery setting",
+    text: "A quiet living environment designed to make structure feel humane, dignified, and sustainable.",
+    image: "/images/centre/reception-lounge.jpeg",
+    icon: HeartHandshake
+  }
+];
+
+const launchHighlights = [
+  "Confidential 24/7 admissions",
+  "Family-inclusive recovery support",
+  "Individual care planning",
+  "Residential wellness routines",
+  "Aftercare continuity"
+];
+
+const careModules = [
+  "Admission guidance",
+  "Clinical assessment",
+  "Residential routine",
+  "Group therapy",
+  "Family sessions",
+  "Wellness practices",
+  "Relapse prevention",
+  "Aftercare planning"
+];
+
 export default function Home() {
+  const featuredTreatments = treatments.slice(0, 6);
+
   return (
     <>
-      <section className="relative isolate overflow-hidden pt-20">
+      <section className="relative isolate min-h-screen overflow-hidden bg-ink pt-20 text-pearl">
         <div className="absolute inset-0 -z-10">
           <Image
             src={hero.image}
-            alt="Quiet premium wellness residence surrounded by nature"
+            alt="Healing Foundation residential wellness centre at night"
             fill
             priority
             sizes="100vw"
-            className="object-cover"
+            className="object-cover opacity-70"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-forest/70 to-forest/20" />
-          <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-cream to-transparent" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(23,53,42,0.98)_0%,rgba(23,53,42,0.78)_46%,rgba(23,53,42,0.24)_100%)]" />
+          <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-cream via-cream/50 to-transparent" />
         </div>
 
-        <div className="container-pad grid min-h-[840px] items-center gap-10 py-24 lg:grid-cols-[1.05fr_0.95fr]">
-          <FloatIn className="max-w-3xl text-pearl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-pearl/20 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-sand backdrop-blur">
-              <ShieldCheck size={14} />
-              {hero.eyebrow}
-            </div>
-            <h1 className="mt-6 font-serif text-5xl font-semibold leading-[0.98] text-balance sm:text-7xl lg:text-8xl">
-              {hero.title}
-            </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-pearl/80 sm:text-xl">
-              {hero.copy}
-            </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link href="/contact" className="gold-button">
-                Start a confidential enquiry
-              </Link>
-              <a
-                href={siteConfig.whatsapp}
-                className="inline-flex h-12 items-center justify-center rounded-full border border-pearl/40 px-7 text-sm font-bold text-pearl transition duration-300 hover:-translate-y-0.5 hover:bg-pearl hover:text-forest"
-              >
-                WhatsApp admissions
-              </a>
-            </div>
-          </FloatIn>
-
-          <Reveal className="hidden lg:block">
-            <div className="glass-panel p-5">
-              <AnimatedStats stats={hero.stats} />
-              <div className="mt-4 rounded-lg border border-white/10 bg-forest/80 p-7 text-pearl shadow-soft">
-                <p className="font-serif text-4xl font-semibold">A calmer first step.</p>
-                <p className="mt-3 text-sm leading-7 text-pearl/70">
-                  Speak privately with a care coordinator about treatment options, suitability, and next steps.
-                </p>
+        <div className="container-pad flex min-h-[calc(100vh-5rem)] flex-col justify-between gap-12 py-10 sm:py-14">
+          <div className="grid gap-10 pt-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
+            <FloatIn className="max-w-6xl">
+              <div className="inline-flex flex-wrap items-center gap-2 rounded-full border border-pearl/25 bg-pearl/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-sand backdrop-blur-xl">
+                <Sparkles size={14} />
+                Healing Foundation Care Experience
               </div>
-            </div>
+              <h1 className="mt-7 max-w-5xl font-serif text-5xl font-semibold leading-[0.92] text-balance sm:text-7xl lg:text-8xl xl:text-9xl">
+                Recovery care with quiet confidence.
+              </h1>
+              <p className="mt-7 max-w-2xl text-base leading-8 text-pearl/78 sm:text-xl">
+                {hero.copy} Built for families who need privacy, clarity, and a residential setting that feels steady from the first call.
+              </p>
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                <Link href="/contact" className="gold-button">
+                  Start confidential enquiry
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+                <a
+                  href={siteConfig.phoneHref}
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-pearl/40 px-7 text-sm font-bold text-pearl transition duration-300 hover:-translate-y-0.5 hover:bg-pearl hover:text-forest"
+                >
+                  <Phone size={16} />
+                  Call admissions
+                </a>
+              </div>
+            </FloatIn>
+
+            <Reveal className="hidden lg:block">
+              <div className="grid gap-4 rounded-lg border border-pearl/20 bg-pearl/10 p-4 shadow-soft backdrop-blur-2xl">
+                <div className="relative min-h-[280px] overflow-hidden rounded-lg">
+                  <Image
+                    src="/images/centre/front-sign.jpeg"
+                    alt="Healing Foundation residence and centre signage"
+                    fill
+                    priority
+                    sizes="38vw"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
+                  <div className="absolute bottom-0 p-5">
+                    <p className="eyebrow text-sand">Residential Program</p>
+                    <p className="mt-2 font-serif text-3xl font-semibold leading-tight">
+                      Private care, visible structure.
+                    </p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-3 gap-3">
+                  {hero.stats.map((stat) => (
+                    <div key={stat.label} className="rounded-lg border border-pearl/14 bg-ink/50 p-4">
+                      <p className="font-serif text-3xl font-semibold text-gold">{stat.value}</p>
+                      <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.16em] text-pearl/60">
+                        {stat.label}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          </div>
+
+          <Reveal className="grid gap-3 pb-10 sm:grid-cols-2 lg:grid-cols-5">
+            {launchHighlights.map((item) => (
+              <div
+                key={item}
+                className="rounded-lg border border-pearl/20 bg-pearl/10 px-4 py-4 text-sm font-semibold text-pearl/86 backdrop-blur-xl"
+              >
+                <BadgeCheck className="mb-3 h-5 w-5 text-gold" />
+                {item}
+              </div>
+            ))}
           </Reveal>
         </div>
       </section>
 
-      <section className="container-pad relative z-10 -mt-20 pb-8 lg:hidden">
-        <AnimatedStats stats={hero.stats} />
-      </section>
-
-      <section className="container-pad relative z-10 pb-20 lg:-mt-20">
-        <div className="grid gap-5 md:grid-cols-3">
-          {trustPoints.map((item, index) => (
-            <Reveal
-              key={item.title}
-              delay={index * 0.08}
-              className="luxury-card group p-7 transition duration-300 hover:-translate-y-1 hover:shadow-soft"
-            >
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-gold/10 text-gold transition group-hover:bg-gold group-hover:text-ink">
-                <item.icon className="h-6 w-6" />
-              </div>
-              <h2 className="mt-6 font-serif text-3xl font-semibold text-forest">{item.title}</h2>
-              <p className="mt-3 text-sm leading-7 text-forest/70">{item.text}</p>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-pearl/70 py-24">
-        <div className="container-pad grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <Reveal>
-            <SectionHeading
-              eyebrow="Treatment Philosophy"
-              title="Recovery care designed around privacy, structure, and emotional safety."
-              copy="Our programs are designed to support each resident through clear routines, therapeutic depth, restorative spaces, and a care team that understands the sensitivity of asking for help."
-            />
-            <div className="mt-9 grid gap-3 sm:grid-cols-2">
-              {inclusions.map((item) => (
-                <div
-                  key={item.title}
-                  className="flex items-center gap-3 rounded-lg border border-forest/10 bg-white/70 p-4 shadow-card transition hover:-translate-y-0.5 hover:border-gold/30"
-                >
-                  <item.icon className="h-5 w-5 shrink-0 text-gold" />
-                  <span className="text-sm font-semibold text-forest">{item.title}</span>
+      <section className="bg-cream py-6">
+        <div className="container-pad">
+          <div className="grid overflow-hidden rounded-lg border border-forest/10 bg-ink text-pearl shadow-soft lg:grid-cols-[0.84fr_1.16fr]">
+            <div className="p-6 sm:p-8 lg:p-10">
+              <p className="eyebrow text-sand">Now open for admissions</p>
+              <h2 className="mt-4 font-serif text-4xl font-semibold leading-tight sm:text-5xl">
+                A calmer way to move from concern to action.
+              </h2>
+              <p className="mt-5 max-w-xl text-sm leading-7 text-pearl/72">
+                The experience is designed to help families understand the centre quickly: what support exists, how care begins, and who to contact privately.
+              </p>
+            </div>
+            <div className="grid border-t border-pearl/10 lg:grid-cols-3 lg:border-l lg:border-t-0">
+              {hero.stats.map((stat) => (
+                <div key={stat.label} className="border-pearl/10 p-6 lg:border-l first:lg:border-l-0">
+                  <p className="font-serif text-5xl font-semibold text-gold">{stat.value}</p>
+                  <p className="mt-3 text-xs font-bold uppercase tracking-[0.18em] text-pearl/64">
+                    {stat.label}
+                  </p>
                 </div>
               ))}
             </div>
-          </Reveal>
-
-          <Reveal className="relative min-h-[520px] overflow-hidden rounded-lg shadow-soft">
-            <Image
-              src="/images/centre/counselling-room.jpeg"
-              alt="Private counselling room at Healing Foundation"
-              fill
-              sizes="(min-width: 1024px) 55vw, 100vw"
-              className="object-cover"
-            />
-            <div className="absolute bottom-6 left-6 right-6 rounded-lg border border-white/30 bg-white/20 p-5 text-pearl backdrop-blur-xl">
-              <p className="font-serif text-3xl font-semibold">Quiet structure, gentle accountability.</p>
-              <p className="mt-2 text-sm leading-6 text-pearl/80">
-                Premium care means the environment supports the therapeutic work.
-              </p>
-            </div>
-          </Reveal>
+          </div>
         </div>
       </section>
 
-      <section className="container-pad py-24">
-        <SectionHeading
-          eyebrow="Programs"
-          title="Personalized treatment for addiction, mental wellness, and family healing."
-          copy="Each pathway is shaped by assessment, clinical need, resident readiness, and long-term recovery goals."
-          align="center"
-        />
-        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {treatments.map((item, index) => (
-            <Reveal
-              key={item.title}
-              delay={index * 0.05}
-              className="luxury-card group p-7 transition duration-300 hover:-translate-y-1 hover:border-gold/30 hover:shadow-soft"
-            >
-              <item.icon className="h-9 w-9 text-gold transition group-hover:scale-110" />
-              <h3 className="mt-6 font-serif text-3xl font-semibold text-forest">{item.title}</h3>
-              <p className="mt-3 text-sm leading-7 text-forest/70">{item.summary}</p>
-              <Link href="/treatments" className="premium-link mt-6 text-sm">
-                Learn more <ArrowRight size={15} />
-              </Link>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      <StorySection />
-
-      <section className="bg-deep py-24 text-pearl">
-        <div className="container-pad grid gap-12 lg:grid-cols-[0.82fr_1.18fr]">
-          <SectionHeading
-            eyebrow="Care Journey"
-            title="A clear admission path for families who need guidance now."
-            copy="From the first call to aftercare, the process is calm, transparent, and centered on safety."
-            tone="dark"
-          />
-          <RecoveryTimeline />
-        </div>
-      </section>
-
-      <section className="container-pad py-24">
-        <SectionHeading
-          eyebrow="Facilities"
-          title="A private wellness setting that supports rest and renewal."
-        />
-        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-          {facilities.map((item) => (
-            <Reveal
-              key={item.title}
-              className="group overflow-hidden rounded-lg bg-white shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-soft"
-            >
-              <div className="relative h-64">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  sizes="(min-width: 1024px) 25vw, 50vw"
-                  className="object-cover transition duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-forest/50 to-transparent opacity-0 transition group-hover:opacity-100" />
-              </div>
-              <div className="p-6">
-                <h3 className="font-serif text-3xl font-semibold text-forest">{item.title}</h3>
-                <p className="mt-2 text-sm leading-7 text-forest/70">{item.text}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-pearl py-24">
+      <section className="bg-cream py-20">
         <div className="container-pad">
-          <SectionHeading
-            eyebrow="Families Say"
-            title="Trust is built through clarity, warmth, and consistent care."
-            align="center"
-          />
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {testimonials.map((item, index) => (
+          <div className="grid gap-6 lg:grid-cols-[0.68fr_1.32fr] lg:items-end">
+            <SectionHeading
+              eyebrow="Experience"
+              title="Built like a premium care edition."
+              copy="Each section introduces one reason to trust the centre, then lets the photographs and admission actions do the heavier work."
+            />
+            <div className="grid gap-4 sm:grid-cols-3">
+              {trustPoints.map((item) => (
+                <Reveal key={item.title} className="rounded-lg border border-forest/10 bg-white p-5 shadow-card">
+                  <item.icon className="h-7 w-7 text-gold" />
+                  <h3 className="mt-5 font-serif text-2xl font-semibold text-forest">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-forest/68">{item.text}</p>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-12 grid gap-5 lg:grid-cols-3">
+            {editionCards.map((card, index) => (
               <Reveal
-                key={item.name}
+                key={card.title}
                 delay={index * 0.08}
-                className="luxury-card p-7 transition duration-300 hover:-translate-y-1 hover:shadow-soft"
+                className="group overflow-hidden rounded-lg border border-forest/10 bg-white shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-soft"
               >
-                <Quote className="h-8 w-8 fill-gold/20 text-gold" />
-                <p className="mt-5 text-lg leading-8 text-forest/80">&ldquo;{item.quote}&rdquo;</p>
-                <p className="mt-6 font-semibold text-forest">{item.name}</p>
-                <p className="text-sm text-gold">{item.role}</p>
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={card.image}
+                    alt={card.title}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, 100vw"
+                    className="object-cover transition duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <card.icon className="h-7 w-7 text-gold" />
+                  <h3 className="mt-5 font-serif text-3xl font-semibold leading-tight text-forest">
+                    {card.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-forest/68">{card.text}</p>
+                </div>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="container-pad grid gap-10 py-24 lg:grid-cols-[0.95fr_1.05fr]">
-        <div>
-          <SectionHeading
-            eyebrow="Common Questions"
-            title="Answers before the first call."
-            copy="If the situation is urgent or sensitive, reach out directly. A coordinator can help you understand options privately."
-          />
-          <Link href="/contact" className="premium-link mt-8 text-sm">
-            Contact admissions <ArrowRight size={16} />
-          </Link>
+      <section className="overflow-hidden bg-ink py-10 text-pearl">
+        <div className="animate-marquee flex whitespace-nowrap">
+          {[...careModules, ...careModules].map((item, index) => (
+            <div
+              key={`${item}-${index}`}
+              className="mx-2 inline-flex items-center gap-3 rounded-full border border-pearl/12 bg-pearl/8 px-5 py-3 text-sm font-bold text-pearl/78"
+            >
+              <CheckCircle2 className="h-4 w-4 text-gold" />
+              {item}
+            </div>
+          ))}
         </div>
-        <FAQAccordion faqs={faqs} />
       </section>
 
-      <section className="relative overflow-hidden bg-forest py-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_0%,rgba(199,168,107,0.26),transparent_28rem)]" />
+      <section className="relative overflow-hidden bg-deep py-24 text-pearl">
+        <div className="container-pad grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
+          <Reveal>
+            <p className="eyebrow text-sand">Programs</p>
+            <h2 className="mt-4 max-w-2xl font-serif text-5xl font-semibold leading-[1.02] text-balance sm:text-6xl">
+              Treatment pathways that feel clear before they feel clinical.
+            </h2>
+            <p className="mt-5 max-w-xl text-base leading-8 text-pearl/72">
+              Families can scan the core options quickly, then speak privately with a coordinator for the right fit.
+            </p>
+            <Link href="/treatments" className="mt-8 inline-flex h-12 items-center rounded-full bg-gold px-7 text-sm font-bold text-ink shadow-glow transition hover:-translate-y-0.5 hover:bg-[#D8BB7D]">
+              Explore treatments
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Reveal>
+
+          <div className="grid gap-3 sm:grid-cols-2">
+            {featuredTreatments.map((item, index) => (
+              <Reveal
+                key={item.title}
+                delay={index * 0.04}
+                className="rounded-lg border border-pearl/12 bg-pearl/8 p-5 backdrop-blur-xl transition hover:border-gold/50 hover:bg-pearl/12"
+              >
+                <item.icon className="h-7 w-7 text-gold" />
+                <h3 className="mt-5 font-serif text-2xl font-semibold text-pearl">{item.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-pearl/64">{item.summary}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-mist py-24">
+        <div className="container-pad">
+          <SectionHeading
+            eyebrow="Facilities"
+            title="Real spaces, not stock promises."
+            copy="The centre photographs become the visual proof: residential rooms, counselling spaces, common areas, and wellness routines."
+            align="center"
+          />
+          <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {facilities.slice(0, 4).map((item, index) => (
+              <Reveal
+                key={item.title}
+                delay={index * 0.06}
+                className={`group relative overflow-hidden rounded-lg shadow-card ${
+                  index === 0 ? "lg:col-span-2 lg:row-span-2" : ""
+                }`}
+              >
+                <div className={index === 0 ? "relative min-h-[520px]" : "relative min-h-[250px]"}>
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    sizes={index === 0 ? "(min-width: 1024px) 50vw, 100vw" : "(min-width: 1024px) 25vw, 100vw"}
+                    className="object-cover transition duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/78 via-ink/22 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-pearl">
+                    <h3 className="font-serif text-3xl font-semibold">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-pearl/76">{item.text}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-cream py-24">
+        <div className="container-pad grid gap-12 lg:grid-cols-[0.76fr_1.24fr]">
+          <div>
+            <p className="eyebrow">Care Journey</p>
+            <h2 className="mt-4 font-serif text-5xl font-semibold leading-[1.02] text-forest sm:text-6xl">
+              From first call to aftercare, the path is visible.
+            </h2>
+            <div className="mt-8 grid gap-3">
+              {processSteps.map((step, index) => (
+                <Reveal key={step.title} delay={index * 0.05} className="rounded-lg border border-forest/10 bg-white p-5 shadow-card">
+                  <div className="flex gap-4">
+                    <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold text-sm font-bold text-ink">
+                      {index + 1}
+                    </span>
+                    <span>
+                      <span className="block font-serif text-2xl font-semibold text-forest">{step.title}</span>
+                      <span className="mt-1 block text-sm leading-6 text-forest/66">{step.text}</span>
+                    </span>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+          <div className="rounded-lg bg-ink p-5 text-pearl shadow-soft">
+            <RecoveryTimeline />
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden bg-forest py-24 text-pearl">
+        <div className="absolute inset-0 opacity-20">
+          <Image
+            src="/images/centre/exterior-day-team.jpeg"
+            alt="Healing Foundation care team outside the residence"
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
         <div className="container-pad relative grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div className="text-pearl">
-            <p className="eyebrow text-sand">Confidential Support</p>
+          <Reveal>
+            <p className="eyebrow text-sand">Families Say</p>
+            <h2 className="mt-4 max-w-2xl font-serif text-5xl font-semibold leading-[1.02] sm:text-6xl">
+              Trust is built in the details families remember.
+            </h2>
+          </Reveal>
+          <div className="grid gap-4 md:grid-cols-3">
+            {testimonials.map((item, index) => (
+              <Reveal
+                key={item.name}
+                delay={index * 0.08}
+                className="rounded-lg border border-pearl/16 bg-pearl/10 p-6 backdrop-blur-xl"
+              >
+                <Users className="h-7 w-7 text-gold" />
+                <p className="mt-5 text-sm leading-7 text-pearl/78">&ldquo;{item.quote}&rdquo;</p>
+                <p className="mt-5 font-semibold text-pearl">{item.name}</p>
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-sand">{item.role}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-cream py-24">
+        <div className="container-pad grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+          <div>
+            <SectionHeading
+              eyebrow="Common Questions"
+              title="Answers before the first call."
+              copy="If the situation is urgent or sensitive, reach out directly. A coordinator can help you understand options privately."
+            />
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link href="/contact" className="forest-button">
+                Contact admissions
+              </Link>
+              <a href={siteConfig.whatsapp} className="gold-button">
+                WhatsApp now
+              </a>
+            </div>
+          </div>
+          <FAQAccordion faqs={faqs} />
+        </div>
+      </section>
+
+      <section className="bg-ink py-24 text-pearl">
+        <div className="container-pad grid gap-10 lg:grid-cols-[0.86fr_1.14fr] lg:items-center">
+          <div>
+            <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-gold text-ink">
+              <CalendarCheck size={22} />
+            </div>
+            <p className="eyebrow mt-6 text-sand">Confidential Support</p>
             <h2 className="mt-3 font-serif text-5xl font-semibold leading-[1.05] sm:text-6xl">
               Speak with an admissions coordinator today.
             </h2>
