@@ -18,7 +18,7 @@ export default function BlogPage() {
         eyebrow="Journal"
         title="Guidance for families considering rehabilitation."
         copy="Practical, compassionate articles on treatment decisions, family involvement, and sustainable recovery."
-        image="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1800&q=85"
+        image="/images/centre/recovery-stages-poster.jpeg"
       />
       <section className="container-pad py-20">
         <SectionHeading eyebrow="Insights" title="Recovery writing with clarity and care." />

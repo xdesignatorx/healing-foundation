@@ -120,8 +120,8 @@ export default function Home() {
 
           <Reveal className="relative min-h-[520px] overflow-hidden rounded-lg shadow-soft">
             <Image
-              src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1400&q=85"
-              alt="Calm wellness therapy space"
+              src="/images/centre/counselling-room.jpeg"
+              alt="Private counselling room at Healing Foundation"
               fill
               sizes="(min-width: 1024px) 55vw, 100vw"
               className="object-cover"

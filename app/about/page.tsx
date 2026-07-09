@@ -16,7 +16,7 @@ export default function AboutPage() {
         eyebrow="About Healing Foundation"
         title="A private place to begin again with dignity."
         copy="We combine clinical structure, compassionate support, and restorative surroundings for individuals and families navigating addiction recovery."
-        image="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1800&q=85"
+        image="/images/centre/front-sign.jpeg"
       />
       <section className="container-pad grid gap-12 py-20 lg:grid-cols-[1fr_0.9fr] lg:items-center">
         <Reveal>
@@ -28,8 +28,8 @@ export default function AboutPage() {
         </Reveal>
         <Reveal className="relative min-h-[430px] overflow-hidden rounded-lg shadow-soft">
           <Image
-            src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1300&q=85"
-            alt="Private consultation lounge"
+            src="/images/centre/team-office-landscape.jpeg"
+            alt="Healing Foundation care team in the consultation office"
             fill
             className="object-cover"
           />

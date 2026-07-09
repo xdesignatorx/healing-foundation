@@ -22,8 +22,7 @@ export const siteConfig = {
   description:
     "A premium residential rehabilitation and wellness centre offering addiction recovery, mental health support, family care, and holistic healing in a calm, private setting.",
   url: "https://healing-foundation.vercel.app",
-  ogImage:
-    "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1200&q=80",
+  ogImage: "/images/centre/front-sign.jpeg",
   phone: "+91 78768 27691",
   secondaryPhone: "+91 98160 98191",
   phoneNumbers: ["+91 78768 27691", "+91 98160 98191"],
@@ -51,8 +50,7 @@ export const hero = {
   title: "Discreet, dignified rehabilitation in a restorative wellness setting.",
   copy:
     "Healing Foundation blends evidence-informed clinical care with serene living, personalized therapy, and family-inclusive recovery planning.",
-  image:
-    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85",
+  image: "/images/centre/exterior-night-wide.jpeg",
   stats: [
     { value: "24/7", label: "clinical support" },
     { value: "1:1", label: "care planning" },
@@ -148,38 +146,32 @@ export const facilities = [
   {
     title: "Private Residential Suites",
     text: "Calm rooms designed for rest, privacy, and uninterrupted recovery.",
-    image:
-      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80"
+    image: "/images/centre/residential-dorm.jpeg"
   },
   {
     title: "Therapy & Consultation Rooms",
     text: "Quiet clinical spaces for individual therapy, psychiatric reviews, and family sessions.",
-    image:
-      "https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=1200&q=80"
+    image: "/images/centre/counselling-room.jpeg"
   },
   {
-    title: "Gardens & Mindfulness Areas",
-    text: "Nature-led spaces for reflection, movement, journaling, and guided mindfulness.",
-    image:
-      "https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1200&q=80"
+    title: "Group Therapy Hall",
+    text: "Open session areas for psychoeducation, guided discussion, and peer-supported recovery work.",
+    image: "/images/centre/group-therapy-session.jpeg"
   },
   {
-    title: "Nutrition-Focused Dining",
-    text: "Balanced meals that support physical restoration and stable daily routines.",
-    image:
-      "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=80"
+    title: "Reception & Common Areas",
+    text: "Clean, welcoming spaces for admissions, coordination, reading, and daily routine.",
+    image: "/images/centre/reception-lounge.jpeg"
   },
   {
-    title: "Medical Observation",
-    text: "Regular wellness monitoring and coordinated reviews where clinical oversight is required.",
-    image:
-      "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80"
+    title: "Consultation Office",
+    text: "Private office spaces for reviews, care planning, family conversations, and documentation.",
+    image: "/images/centre/consultation-office.jpeg"
   },
   {
     title: "Movement & Fitness Zone",
     text: "Gentle fitness, walking routines, and guided movement to rebuild energy and confidence.",
-    image:
-      "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80"
+    image: "/images/centre/wellness-yoga-hall.jpeg"
   }
 ];
 
@@ -264,34 +256,68 @@ export const megaMenu = {
 
 export const gallery = [
   {
-    title: "Arrival Courtyard",
-    image:
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80"
+    title: "Healing Foundation Residence",
+    image: "/images/centre/front-sign.jpeg"
   },
   {
-    title: "Quiet Lounge",
-    image:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+    title: "Residential Building",
+    image: "/images/centre/exterior-day-team.jpeg"
   },
   {
-    title: "Wellness Studio",
-    image:
-      "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&w=1200&q=80"
+    title: "Night View",
+    image: "/images/centre/exterior-night-wide.jpeg"
   },
   {
-    title: "Garden Walks",
-    image:
-      "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80"
+    title: "Reception Lounge",
+    image: "/images/centre/reception-lounge.jpeg"
   },
   {
-    title: "Dining Room",
-    image:
-      "https://images.unsplash.com/photo-1617104678098-de229db51175?auto=format&fit=crop&w=1200&q=80"
+    title: "Residential Dormitory",
+    image: "/images/centre/residential-dorm.jpeg"
   },
   {
-    title: "Reflection Spaces",
-    image:
-      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80"
+    title: "Shared Room",
+    image: "/images/centre/shared-room.jpeg"
+  },
+  {
+    title: "Counselling Room",
+    image: "/images/centre/counselling-room.jpeg"
+  },
+  {
+    title: "Consultation Office",
+    image: "/images/centre/consultation-office.jpeg"
+  },
+  {
+    title: "Group Therapy Session",
+    image: "/images/centre/group-therapy-session.jpeg"
+  },
+  {
+    title: "Wellness & Yoga Hall",
+    image: "/images/centre/wellness-yoga-hall.jpeg"
+  },
+  {
+    title: "Awareness Session",
+    image: "/images/centre/awareness-session.jpeg"
+  },
+  {
+    title: "Outdoor Activity",
+    image: "/images/centre/outdoor-activity.jpeg"
+  },
+  {
+    title: "Community Celebration",
+    image: "/images/centre/community-celebration.jpeg"
+  },
+  {
+    title: "Recovery Education",
+    image: "/images/centre/recovery-stages-poster.jpeg"
+  },
+  {
+    title: "Stair Lobby",
+    image: "/images/centre/stair-lobby.jpeg"
+  },
+  {
+    title: "Care Team",
+    image: "/images/centre/team-office-landscape.jpeg"
   }
 ];
 
@@ -346,8 +372,7 @@ export const blogPosts = [
     excerpt:
       "A practical guide to evaluating care quality, privacy, family support, and aftercare planning.",
     date: "2026-01-12",
-    image:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80"
+    image: "/images/centre/consultation-office.jpeg"
   },
   {
     slug: "family-role-in-recovery",
@@ -355,8 +380,7 @@ export const blogPosts = [
     excerpt:
       "Why education, boundaries, and compassionate communication matter during and after treatment.",
     date: "2026-02-03",
-    image:
-      "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1200&q=80"
+    image: "/images/centre/group-therapy-session.jpeg"
   },
   {
     slug: "routine-and-wellness",
@@ -364,8 +388,7 @@ export const blogPosts = [
     excerpt:
       "Sleep, nutrition, therapy, movement, and reflection can create stability during early recovery.",
     date: "2026-03-18",
-    image:
-      "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80"
+    image: "/images/centre/wellness-yoga-hall.jpeg"
   }
 ];
 

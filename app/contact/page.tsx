@@ -17,7 +17,7 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="A private conversation can be the beginning of recovery."
         copy="Reach out for confidential admissions guidance, family consultation, or program suitability questions."
-        image="https://images.unsplash.com/photo-1604881991720-f91add269bed?auto=format&fit=crop&w=1800&q=85"
+        image="/images/centre/consultation-office.jpeg"
       />
       <section className="container-pad grid gap-10 py-20 lg:grid-cols-[0.85fr_1.15fr]">
         <Reveal>
@@ -66,7 +66,7 @@ export default function ContactPage() {
           <p className="eyebrow text-sand">Privacy Note</p>
           <h2 className="mt-3 font-serif text-4xl font-semibold">Every enquiry is handled discreetly.</h2>
           <p className="mt-4 max-w-3xl text-base leading-8 text-pearl/70">
-            This website uses placeholder contact details and a demo form. Before launch, connect the form to a secure email, CRM, or admissions workflow and replace all placeholder details.
+            Calls, WhatsApp messages, emails, and enquiry form submissions should be handled with discretion by the admissions team. Connect the form to your preferred secure email, CRM, or admissions workflow before heavy promotion.
           </p>
         </div>
       </section>

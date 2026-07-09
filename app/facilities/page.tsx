@@ -16,7 +16,7 @@ export default function FacilitiesPage() {
         eyebrow="Facilities"
         title="Restorative spaces designed for privacy, rhythm, and renewal."
         copy="The residence supports recovery through calm interiors, outdoor reflection areas, structured routines, and clinical spaces."
-        image="https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=1800&q=85"
+        image="/images/centre/exterior-night-wide.jpeg"
       />
       <section className="container-pad py-20">
         <SectionHeading

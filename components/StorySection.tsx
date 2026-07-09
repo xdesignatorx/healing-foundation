@@ -10,8 +10,8 @@ export function StorySection() {
       <div className="container-pad relative grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
         <Reveal className="relative min-h-[540px] overflow-hidden rounded-lg shadow-soft">
           <Image
-            src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1400&q=85"
-            alt="Peaceful path through a wellness garden"
+            src="/images/centre/stair-lobby.jpeg"
+            alt="Clean interior stair lobby at Healing Foundation"
             fill
             className="object-cover"
           />

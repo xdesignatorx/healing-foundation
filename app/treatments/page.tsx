@@ -15,7 +15,7 @@ export default function TreatmentsPage() {
         eyebrow="Treatments"
         title="Evidence-informed care for complex recovery needs."
         copy="Programs are tailored to clinical assessment, personal history, family context, and the resident's recovery goals."
-        image="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1800&q=85"
+        image="/images/centre/group-therapy-session.jpeg"
       />
       <section className="container-pad py-20">
         <SectionHeading

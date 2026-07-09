@@ -6,7 +6,7 @@ import { gallery } from "@/data/site";
 
 export const metadata = {
   title: "Gallery",
-  description: "Explore placeholder gallery imagery for Healing Foundation's premium wellness residence."
+  description: "Explore real centre photos of Healing Foundation's residence, therapy spaces, rooms, and activity areas."
 };
 
 export default function GalleryPage() {
@@ -14,9 +14,9 @@ export default function GalleryPage() {
     <>
       <PageHero
         eyebrow="Gallery"
-        title="A glimpse of calm residential recovery."
-        copy="These placeholder visuals represent the intended premium, peaceful, and nature-led atmosphere. Replace with original centre photography before launch."
-        image="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1800&q=85"
+        title="Real spaces for structured, compassionate recovery."
+        copy="A curated look at Healing Foundation's residence, counselling rooms, shared spaces, wellness sessions, and outdoor activity areas."
+        image="/images/centre/exterior-day-team.jpeg"
       />
       <section className="container-pad py-20">
         <SectionHeading
