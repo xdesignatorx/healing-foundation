@@ -80,28 +80,29 @@ export default function Home() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-[#F4F1E8] pt-24 text-ink">
-        <div className="container-pad min-h-screen py-10">
-          <FloatIn className="mx-auto max-w-5xl text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-forest shadow-card">
+      <section className="relative isolate overflow-hidden bg-[#F4F1E8] pt-24 text-ink">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_78%_22%,rgba(169,184,164,0.42),transparent_26rem),radial-gradient(circle_at_18%_82%,rgba(199,168,107,0.22),transparent_24rem)]" />
+        <div className="container-pad grid min-h-[calc(100vh-3rem)] gap-10 py-12 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
+          <FloatIn>
+            <div className="inline-flex items-center gap-2 rounded-full border border-forest/15 bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-forest shadow-card">
               <Sparkles size={14} className="text-gold" />
               Healing Foundation Wellness Residence
             </div>
-            <h1 className="mx-auto mt-8 max-w-5xl font-serif text-6xl font-semibold leading-[0.9] text-forest sm:text-8xl lg:text-[9.5rem]">
+            <h1 className="mt-8 max-w-3xl font-serif text-6xl font-semibold leading-[0.86] text-forest sm:text-8xl lg:text-[8.4rem]">
               Care,
               <span className="block italic text-gold">softened.</span>
             </h1>
-            <p className="mx-auto mt-7 max-w-2xl text-lg leading-8 text-forest/72">
+            <p className="mt-7 max-w-xl text-lg leading-8 text-forest/72">
               A private rehabilitation centre for families who need recovery support that feels clear, humane, and steady from the very first conversation.
             </p>
-            <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link href="/contact" className="forest-button">
                 Begin private enquiry
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
               <a
                 href={siteConfig.phoneHref}
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-forest/20 bg-white/70 px-7 text-sm font-bold text-forest shadow-card transition hover:-translate-y-0.5 hover:border-gold"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-forest/20 bg-white/80 px-7 text-sm font-bold text-forest shadow-card transition hover:-translate-y-0.5 hover:border-gold"
               >
                 <Phone size={16} />
                 Call now
@@ -109,29 +110,29 @@ export default function Home() {
             </div>
           </FloatIn>
 
-          <div className="relative mx-auto mt-14 grid max-w-6xl gap-5 lg:grid-cols-[0.92fr_1.16fr_0.92fr] lg:items-center">
-            <Reveal className="order-2 rounded-[2rem] border border-forest/10 bg-white p-3 shadow-soft lg:order-1 lg:rotate-[-3deg]">
+          <div className="relative min-h-[620px]">
+            <Reveal className="absolute left-0 top-8 w-[58%] rotate-[-4deg] rounded-[2rem] border border-forest/10 bg-white p-3 shadow-soft">
               <div className="relative aspect-[4/5] overflow-hidden rounded-[1.45rem]">
                 <Image
                   src="/images/centre/front-sign.jpeg"
                   alt="Healing Foundation sign outside the centre"
                   fill
                   priority
-                  sizes="(min-width: 1024px) 28vw, 100vw"
+                  sizes="(min-width: 1024px) 32vw, 70vw"
                   className="object-cover"
                 />
               </div>
               <p className="px-3 py-4 text-sm font-bold text-forest">Actual centre signage</p>
             </Reveal>
 
-            <Reveal className="order-1 rounded-[2.4rem] border border-forest/10 bg-white p-3 shadow-soft lg:order-2">
+            <Reveal className="absolute right-0 top-0 w-[64%] rotate-[3deg] rounded-[2.4rem] border border-forest/10 bg-white p-3 shadow-soft">
               <div className="relative aspect-[4/3] overflow-hidden rounded-[1.8rem]">
                 <Image
                   src="/images/centre/exterior-day-team.jpeg"
                   alt="Healing Foundation residence exterior"
                   fill
                   priority
-                  sizes="(min-width: 1024px) 42vw, 100vw"
+                  sizes="(min-width: 1024px) 36vw, 80vw"
                   className="object-cover"
                 />
               </div>
@@ -149,14 +150,14 @@ export default function Home() {
               </div>
             </Reveal>
 
-            <Reveal className="order-3 rounded-[2rem] border border-forest/10 bg-white p-3 shadow-soft lg:rotate-[3deg]">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[1.45rem]">
+            <Reveal className="absolute bottom-8 left-[30%] w-[48%] rounded-[2rem] border border-forest/10 bg-white p-3 shadow-soft">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[1.45rem]">
                 <Image
                   src="/images/centre/counselling-room.jpeg"
                   alt="Private counselling room"
                   fill
                   priority
-                  sizes="(min-width: 1024px) 28vw, 100vw"
+                  sizes="(min-width: 1024px) 27vw, 70vw"
                   className="object-cover"
                 />
               </div>

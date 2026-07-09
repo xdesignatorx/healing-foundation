@@ -20,8 +20,7 @@ export function Header() {
     return () => window.removeEventListener("scroll", updateScrolled);
   }, []);
 
-  const isHome = pathname === "/";
-  const transparent = isHome && !scrolled && !open;
+  const transparent = false;
 
   return (
     <header
