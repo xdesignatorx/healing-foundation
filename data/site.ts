@@ -22,6 +22,7 @@ export const siteConfig = {
   description:
     "A premium residential rehabilitation and wellness centre offering addiction recovery, mental health support, family care, and holistic healing in a calm, private setting.",
   url: "https://healing-foundation.vercel.app",
+  logo: "/images/brand/healing-foundation-logo.png",
   ogImage: "/images/centre/front-sign.jpeg",
   phone: "+91 78768 27691",
   secondaryPhone: "+91 98160 98191",
@@ -31,7 +32,7 @@ export const siteConfig = {
   whatsapp: "https://wa.me/917876827691",
   email: "healingfoundation9@gmail.com",
   emailHref: "mailto:healingfoundation9@gmail.com",
-  address: "Private Wellness Estate, Near Green Valley Road, India",
+  address: "Mehta Market, Opp. Tata Motors, Kumarhatti, Solan, H.P.",
   hours: "Admissions support available 24/7"
 };
 

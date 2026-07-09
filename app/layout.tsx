@@ -30,6 +30,10 @@ export const metadata: Metadata = {
     url: siteConfig.url,
     images: [siteConfig.ogImage]
   },
+  icons: {
+    icon: siteConfig.logo,
+    apple: siteConfig.logo
+  },
   robots: {
     index: true,
     follow: true

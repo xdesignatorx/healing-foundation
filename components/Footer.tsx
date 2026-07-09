@@ -1,4 +1,5 @@
 import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { navItems, siteConfig } from "@/data/site";
 
@@ -8,7 +9,18 @@ export function Footer() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(199,168,107,0.20),transparent_28rem)]" />
       <div className="container-pad relative grid gap-10 py-16 lg:grid-cols-[1.15fr_0.7fr_1fr]">
         <div>
-          <p className="font-serif text-4xl font-semibold">{siteConfig.name}</p>
+          <div className="flex items-center gap-4">
+            <span className="relative flex h-16 w-16 shrink-0 overflow-hidden rounded-full border border-white/15 bg-white">
+              <Image
+                src={siteConfig.logo}
+                alt={`${siteConfig.name} logo`}
+                fill
+                sizes="64px"
+                className="object-cover"
+              />
+            </span>
+            <p className="font-serif text-4xl font-semibold leading-none">{siteConfig.name}</p>
+          </div>
           <p className="mt-4 max-w-md text-sm leading-7 text-pearl/70">
             {siteConfig.description}
           </p>

@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -31,12 +32,26 @@ export function Header() {
       }`}
     >
       <div className={`container-pad flex items-center justify-between transition-all duration-300 ${scrolled ? "h-16" : "h-20"}`}>
-        <Link href="/" className="group">
-          <span className={`block font-serif text-2xl font-semibold transition ${transparent ? "text-pearl" : "text-forest"}`}>
-            {siteConfig.name}
+        <Link href="/" className="group flex items-center gap-3">
+          <span className={`relative flex h-12 w-12 shrink-0 overflow-hidden rounded-full border transition ${
+            transparent ? "border-pearl/30 bg-white/10" : "border-forest/10 bg-white"
+          }`}>
+            <Image
+              src={siteConfig.logo}
+              alt={`${siteConfig.name} logo`}
+              fill
+              sizes="48px"
+              className="object-cover"
+              priority
+            />
           </span>
-          <span className={`text-[0.68rem] uppercase tracking-[0.28em] ${transparent ? "text-sand" : "text-gold"}`}>
-            Wellness Residence
+          <span>
+            <span className={`block font-serif text-2xl font-semibold leading-none transition ${transparent ? "text-pearl" : "text-forest"}`}>
+              {siteConfig.name}
+            </span>
+            <span className={`text-[0.68rem] uppercase tracking-[0.28em] ${transparent ? "text-sand" : "text-gold"}`}>
+              Wellness Residence
+            </span>
           </span>
         </Link>
 
