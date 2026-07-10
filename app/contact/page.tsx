@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { ExternalLink, Mail, MapPin, Navigation, Phone } from "lucide-react";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Motion";
@@ -11,6 +11,10 @@ export const metadata = {
 };
 
 export default function ContactPage() {
+  const mapQuery = encodeURIComponent(siteConfig.address);
+  const mapEmbedUrl = `https://www.google.com/maps?q=${mapQuery}&output=embed`;
+  const directionsUrl = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
+
   return (
     <>
       <PageHero
@@ -59,6 +63,58 @@ export default function ContactPage() {
         </Reveal>
         <Reveal>
           <EnquiryForm />
+        </Reveal>
+      </section>
+      <section className="container-pad pb-20">
+        <Reveal className="overflow-hidden rounded-[2rem] border border-forest/10 bg-white shadow-soft">
+          <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
+            <div className="bg-forest p-8 text-pearl md:p-10">
+              <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-gold text-ink">
+                <MapPin className="h-6 w-6" />
+              </div>
+              <p className="eyebrow mt-7 text-sand">Find Healing Foundation</p>
+              <h2 className="mt-3 font-serif text-4xl font-semibold leading-tight md:text-5xl">
+                Reach the centre with confidence.
+              </h2>
+              <p className="mt-5 text-sm leading-7 text-pearl/72">
+                Use the interactive map for directions to the centre. For a smoother visit, call the admissions team before arriving.
+              </p>
+              <div className="mt-8 rounded-2xl border border-pearl/15 bg-pearl/10 p-5 backdrop-blur">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-sand">Address</p>
+                <p className="mt-3 text-base font-semibold leading-7 text-pearl">{siteConfig.address}</p>
+              </div>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
+                <a
+                  href={directionsUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-gold px-6 text-sm font-bold text-ink shadow-glow transition hover:-translate-y-0.5 hover:bg-[#D8BB7D]"
+                >
+                  <Navigation className="h-4 w-4" />
+                  Open directions
+                  <ExternalLink className="h-4 w-4" />
+                </a>
+                <a
+                  href={siteConfig.phoneHref}
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-pearl/25 px-6 text-sm font-bold text-pearl transition hover:-translate-y-0.5 hover:bg-pearl hover:text-forest"
+                >
+                  <Phone className="h-4 w-4" />
+                  Call before visit
+                </a>
+              </div>
+            </div>
+            <div className="relative min-h-[440px] bg-mist">
+              <iframe
+                title="Healing Foundation location map"
+                src={mapEmbedUrl}
+                className="absolute inset-0 h-full w-full border-0 grayscale-[15%]"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/30 to-transparent" />
+            </div>
+          </div>
         </Reveal>
       </section>
       <section className="container-pad pb-20">
