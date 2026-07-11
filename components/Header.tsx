@@ -20,200 +20,196 @@ export function Header() {
     return () => window.removeEventListener("scroll", updateScrolled);
   }, []);
 
-  const transparent = false;
-
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        transparent
-          ? "border-transparent bg-transparent"
-          : "border-b border-white/40 bg-cream/80 shadow-card backdrop-blur-2xl"
-      }`}
-    >
-      <div className={`container-pad flex items-center justify-between transition-all duration-300 ${scrolled ? "h-16" : "h-20"}`}>
-        <Link href="/" className="group flex items-center gap-3">
-          <span className={`relative flex h-12 w-12 shrink-0 overflow-hidden rounded-full border transition ${
-            transparent ? "border-pearl/30 bg-white/10" : "border-forest/10 bg-white"
-          }`}>
-            <Image
-              src={siteConfig.logo}
-              alt={`${siteConfig.name} logo`}
-              fill
-              sizes="48px"
-              className="object-cover"
-              priority
-            />
-          </span>
-          <span>
-            <span className={`block font-serif text-2xl font-semibold leading-none transition ${transparent ? "text-pearl" : "text-forest"}`}>
-              {siteConfig.name}
+    <header className="pointer-events-none fixed inset-x-0 top-3 z-50">
+      <div className="container-pad">
+        <div
+          className={`pointer-events-auto flex items-center justify-between rounded-full border border-forest/10 bg-white/90 px-3 backdrop-blur-2xl transition-all duration-300 sm:px-4 ${
+            scrolled ? "h-16 shadow-soft" : "h-[4.5rem] shadow-card"
+          }`}
+        >
+          <Link href="/" className="group flex min-w-0 items-center gap-2.5">
+            <span className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border border-forest/10 bg-white">
+              <Image
+                src={siteConfig.logo}
+                alt={`${siteConfig.name} logo`}
+                fill
+                sizes="40px"
+                className="object-cover"
+                priority
+              />
             </span>
-            <span className={`text-[0.68rem] uppercase tracking-[0.28em] ${transparent ? "text-sand" : "text-gold"}`}>
-              Wellness Residence
+            <span className="min-w-0">
+              <span className="block truncate text-sm font-bold leading-none text-forest sm:text-base">
+                {siteConfig.name}
+              </span>
+              <span className="mt-1 block truncate text-[0.58rem] font-bold uppercase text-[#7057d9]">
+                Wellness residence
+              </span>
             </span>
-          </span>
-        </Link>
+          </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex">
-          {navItems.map((item) => (
-            <div key={item.href} className="group relative py-7">
-              {item.label === "Treatments" || item.label === "Facilities" ? (
-                <>
+          <nav className="hidden items-center gap-5 xl:flex">
+            {navItems.map((item) => {
+              const hasMenu = item.label === "Treatments" || item.label === "Facilities";
+
+              return (
+                <div key={item.href} className="group relative py-6">
                   <Link
                     href={item.href}
-                    className={`inline-flex items-center gap-1.5 text-sm font-medium transition hover:text-gold ${
-                      pathname === item.href
-                        ? "text-gold"
-                        : transparent
-                          ? "text-pearl/90"
-                          : "text-forest"
+                    className={`inline-flex items-center gap-1 text-xs font-semibold transition hover:text-[#7057d9] ${
+                      pathname === item.href ? "text-[#7057d9]" : "text-forest/76"
                     }`}
                   >
                     {item.label}
-                    <ChevronDown size={14} className="transition group-hover:rotate-180" />
+                    {hasMenu && <ChevronDown className="h-3.5 w-3.5 transition group-hover:rotate-180" />}
                   </Link>
-                  <div className="pointer-events-none absolute left-1/2 top-full w-[760px] -translate-x-1/2 translate-y-3 opacity-0 transition duration-300 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
-                    <div className="overflow-hidden rounded-lg border border-white/60 bg-cream/95 shadow-soft backdrop-blur-2xl">
-                      <div className="grid grid-cols-[0.78fr_1.22fr]">
-                        <div className="bg-deep p-7 text-pearl">
-                          <p className="eyebrow text-sand">{item.label}</p>
-                          <p className="mt-4 font-serif text-4xl font-semibold leading-tight">
-                            Private care pathways with refined residential support.
-                          </p>
-                          <p className="mt-4 text-sm leading-7 text-pearl/70">
-                            Explore the programs and spaces designed to support recovery with dignity, privacy, and structure.
-                          </p>
-                          <Link href={item.href} className="mt-6 inline-flex rounded-full bg-gold px-5 py-3 text-sm font-bold text-ink transition hover:bg-[#D8BB7D]">
-                            View all
-                          </Link>
-                        </div>
-                        <div className="grid grid-cols-2 gap-2 p-4">
-                          {(item.label === "Treatments" ? megaMenu.treatments : megaMenu.facilities).map((entry) => (
+
+                  {hasMenu && (
+                    <div className="pointer-events-none absolute left-1/2 top-full w-[680px] -translate-x-1/2 translate-y-2 opacity-0 transition duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
+                      <div className="overflow-hidden rounded-lg border border-forest/10 bg-white shadow-soft">
+                        <div className="grid grid-cols-[0.72fr_1.28fr]">
+                          <div className="bg-[#efeafd] p-6 text-[#2d2552]">
+                            <p className="text-[0.65rem] font-bold uppercase text-[#7057d9]">{item.label}</p>
+                            <p className="mt-4 text-2xl font-semibold leading-tight">
+                              Clear care, thoughtfully coordinated.
+                            </p>
+                            <p className="mt-3 text-xs leading-6 text-[#2d2552]/62">
+                              Explore private treatment pathways and the spaces that support recovery.
+                            </p>
                             <Link
-                              key={entry.label}
-                              href={entry.href}
-                              className="group/item rounded-lg p-4 transition hover:bg-white hover:shadow-card"
+                              href={item.href}
+                              className="mt-5 inline-flex h-10 items-center rounded-md bg-[#7057d9] px-4 text-xs font-bold text-white"
                             >
-                              <div className="flex gap-3">
-                                <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold/10 text-gold transition group-hover/item:bg-gold group-hover/item:text-ink">
-                                  <entry.icon size={18} />
-                                </span>
-                                <span>
-                                  <span className="block font-serif text-xl font-semibold text-forest">
-                                    {entry.label}
-                                  </span>
-                                  <span className="mt-1 block text-xs leading-5 text-ink/65">
-                                    {entry.description}
-                                  </span>
-                                </span>
-                              </div>
+                              View all
                             </Link>
-                          ))}
+                          </div>
+                          <div className="grid grid-cols-2 gap-1 p-3">
+                            {(item.label === "Treatments" ? megaMenu.treatments : megaMenu.facilities).map((entry) => (
+                              <Link
+                                key={entry.label}
+                                href={entry.href}
+                                className="group/item rounded-md p-3 transition hover:bg-[#f7f7f2]"
+                              >
+                                <div className="flex gap-2.5">
+                                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-md bg-[#f0eaff] text-[#7057d9] transition group-hover/item:bg-[#7057d9] group-hover/item:text-white">
+                                    <entry.icon className="h-4 w-4" />
+                                  </span>
+                                  <span>
+                                    <span className="block text-xs font-bold text-forest">{entry.label}</span>
+                                    <span className="mt-1 block text-[0.65rem] leading-4 text-ink/54">{entry.description}</span>
+                                  </span>
+                                </div>
+                              </Link>
+                            ))}
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </>
-              ) : (
-                <Link
-                  href={item.href}
-                  className={`text-sm font-medium transition hover:text-gold ${
-                    pathname === item.href
-                      ? "text-gold"
-                      : transparent
-                        ? "text-pearl/90"
-                        : "text-forest"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              )}
-            </div>
-          ))}
-        </nav>
-
-        <div className="hidden items-center gap-3 lg:flex">
-          <a
-            href={siteConfig.phoneHref}
-            className={`inline-flex h-11 items-center gap-2 rounded-full border px-5 text-sm font-semibold transition hover:border-gold hover:bg-gold hover:text-ink ${
-              transparent ? "border-pearl/30 text-pearl" : "border-gold/40 text-forest"
-            }`}
-          >
-            <Phone size={16} />
-            Call now
-          </a>
-          <Link
-            href="/contact"
-            className="inline-flex h-11 items-center rounded-full bg-gold px-5 text-sm font-bold text-ink shadow-glow transition hover:-translate-y-0.5 hover:bg-[#D8BB7D]"
-          >
-            Confidential enquiry
-          </Link>
-        </div>
-
-        <button
-          className={`inline-flex h-11 w-11 items-center justify-center rounded-full border transition lg:hidden ${
-            transparent ? "border-pearl/30 text-pearl" : "border-forest/20 text-forest"
-          }`}
-          onClick={() => setOpen((value) => !value)}
-          aria-expanded={open}
-          aria-label="Toggle navigation"
-        >
-          {open ? <X size={20} /> : <Menu size={20} />}
-        </button>
-      </div>
-
-      {open && (
-        <div className="border-t border-forest/10 bg-cream px-5 py-5 shadow-card lg:hidden">
-          <nav className="grid gap-3">
-            {navItems.map((item) => (
-              <div key={item.href}>
-                {item.label === "Treatments" || item.label === "Facilities" ? (
-                  <>
-                    <button
-                      type="button"
-                      className="flex w-full items-center justify-between rounded-md px-3 py-3 text-sm font-semibold text-forest hover:bg-mist"
-                      aria-expanded={mobilePanel === item.label}
-                      onClick={() => setMobilePanel(mobilePanel === item.label ? null : item.label)}
-                    >
-                      {item.label}
-                      <ChevronDown
-                        size={16}
-                        className={`transition ${mobilePanel === item.label ? "rotate-180" : ""}`}
-                      />
-                    </button>
-                    {mobilePanel === item.label && (
-                      <div className="mt-2 grid gap-2 rounded-lg border border-forest/10 bg-white/70 p-2">
-                        {(item.label === "Treatments" ? megaMenu.treatments : megaMenu.facilities).map((entry) => (
-                          <Link
-                            key={entry.label}
-                            href={entry.href}
-                            onClick={() => setOpen(false)}
-                            className="flex gap-3 rounded-md px-3 py-3 hover:bg-cream"
-                          >
-                            <entry.icon className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
-                            <span>
-                              <span className="block text-sm font-semibold text-forest">{entry.label}</span>
-                              <span className="block text-xs leading-5 text-ink/65">{entry.description}</span>
-                            </span>
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <Link
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                    className="block rounded-md px-3 py-3 text-sm font-semibold text-forest hover:bg-mist"
-                  >
-                    {item.label}
-                  </Link>
-                )}
-              </div>
-            ))}
+                  )}
+                </div>
+              );
+            })}
           </nav>
+
+          <div className="hidden items-center gap-2 xl:flex">
+            <a
+              href={siteConfig.phoneHref}
+              aria-label="Call admissions"
+              title="Call admissions"
+              className="grid h-10 w-10 place-items-center rounded-full border border-forest/12 text-forest transition hover:border-[#7057d9] hover:bg-[#f0eaff] hover:text-[#7057d9]"
+            >
+              <Phone className="h-4 w-4" />
+            </a>
+            <Link
+              href="/contact"
+              className="inline-flex h-10 items-center rounded-md bg-[#7057d9] px-4 text-xs font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#5e46c7]"
+            >
+              Confidential enquiry
+            </Link>
+          </div>
+
+          <button
+            type="button"
+            className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-forest/12 text-forest transition hover:bg-[#f0eaff] xl:hidden"
+            onClick={() => setOpen((value) => !value)}
+            aria-expanded={open}
+            aria-label="Toggle navigation"
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
-      )}
+
+        {open && (
+          <div className="pointer-events-auto mt-2 max-h-[calc(100vh-6.5rem)] overflow-y-auto rounded-lg border border-forest/10 bg-white p-4 shadow-soft xl:hidden">
+            <nav className="grid gap-1">
+              {navItems.map((item) => {
+                const hasMenu = item.label === "Treatments" || item.label === "Facilities";
+
+                return (
+                  <div key={item.href}>
+                    {hasMenu ? (
+                      <>
+                        <button
+                          type="button"
+                          className="flex w-full items-center justify-between rounded-md px-3 py-3 text-sm font-semibold text-forest hover:bg-[#f7f7f2]"
+                          aria-expanded={mobilePanel === item.label}
+                          onClick={() => setMobilePanel(mobilePanel === item.label ? null : item.label)}
+                        >
+                          {item.label}
+                          <ChevronDown className={`h-4 w-4 transition ${mobilePanel === item.label ? "rotate-180" : ""}`} />
+                        </button>
+                        {mobilePanel === item.label && (
+                          <div className="mb-2 grid gap-1 rounded-md bg-[#f7f7f2] p-2 sm:grid-cols-2">
+                            {(item.label === "Treatments" ? megaMenu.treatments : megaMenu.facilities).map((entry) => (
+                              <Link
+                                key={entry.label}
+                                href={entry.href}
+                                onClick={() => setOpen(false)}
+                                className="flex gap-3 rounded-md bg-white px-3 py-3"
+                              >
+                                <entry.icon className="mt-0.5 h-4 w-4 shrink-0 text-[#7057d9]" />
+                                <span>
+                                  <span className="block text-xs font-bold text-forest">{entry.label}</span>
+                                  <span className="mt-1 block text-[0.65rem] leading-4 text-ink/54">{entry.description}</span>
+                                </span>
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        onClick={() => setOpen(false)}
+                        className="block rounded-md px-3 py-3 text-sm font-semibold text-forest hover:bg-[#f7f7f2]"
+                      >
+                        {item.label}
+                      </Link>
+                    )}
+                  </div>
+                );
+              })}
+            </nav>
+            <div className="mt-3 grid grid-cols-[auto_1fr] gap-2 border-t border-forest/8 pt-3">
+              <a
+                href={siteConfig.phoneHref}
+                aria-label="Call admissions"
+                className="grid h-11 w-11 place-items-center rounded-md border border-forest/12 text-forest"
+              >
+                <Phone className="h-4 w-4" />
+              </a>
+              <Link
+                href="/contact"
+                onClick={() => setOpen(false)}
+                className="inline-flex h-11 items-center justify-center rounded-md bg-[#7057d9] px-4 text-sm font-bold text-white"
+              >
+                Confidential enquiry
+              </Link>
+            </div>
+          </div>
+        )}
+      </div>
     </header>
   );
 }

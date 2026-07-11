@@ -3,7 +3,7 @@ import { siteConfig } from "@/data/site";
 
 export function FloatingActions() {
   return (
-    <div className="fixed bottom-5 right-5 z-50 flex flex-col gap-3">
+    <div className="fixed bottom-5 right-5 z-50 hidden flex-col gap-3 md:flex">
       <a
         href={siteConfig.whatsapp}
         target="_blank"

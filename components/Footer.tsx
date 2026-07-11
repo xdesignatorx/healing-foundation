@@ -5,77 +5,80 @@ import { navItems, siteConfig } from "@/data/site";
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-deep text-pearl">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(199,168,107,0.20),transparent_28rem)]" />
-      <div className="container-pad relative grid gap-10 py-16 lg:grid-cols-[1.15fr_0.7fr_1fr]">
-        <div>
-          <div className="flex items-center gap-4">
-            <span className="relative flex h-16 w-16 shrink-0 overflow-hidden rounded-full border border-white/15 bg-white">
-              <Image
-                src={siteConfig.logo}
-                alt={`${siteConfig.name} logo`}
-                fill
-                sizes="64px"
-                className="object-cover"
-              />
-            </span>
-            <p className="font-serif text-4xl font-semibold leading-none">{siteConfig.name}</p>
-          </div>
-          <p className="mt-4 max-w-md text-sm leading-7 text-pearl/70">
-            {siteConfig.description}
-          </p>
-          <Link href="/contact" className="mt-7 inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-bold text-ink transition hover:-translate-y-0.5 hover:bg-[#D8BB7D]">
-            Private enquiry <ArrowRight size={16} />
-          </Link>
-        </div>
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sand">
-            Explore
-          </p>
-          <div className="mt-4 grid gap-2">
-            {navItems.map((item) => (
+    <footer className="bg-[#1e2622] text-white">
+      <div className="container-pad py-16 sm:py-20">
+        <div className="grid gap-12 border-b border-white/12 pb-14 lg:grid-cols-[1.1fr_0.55fr_0.8fr]">
+          <div>
+            <Link href="/" className="inline-flex items-center gap-3">
+              <span className="relative h-12 w-12 overflow-hidden rounded-full border border-white/14 bg-white">
+                <Image
+                  src={siteConfig.logo}
+                  alt={`${siteConfig.name} logo`}
+                  fill
+                  sizes="48px"
+                  className="object-cover"
+                />
+              </span>
+              <span>
+                <span className="block text-xl font-bold leading-none">{siteConfig.name}</span>
+                <span className="mt-1 block text-[0.62rem] font-bold uppercase text-[#d5c9ff]">Wellness residence</span>
+              </span>
+            </Link>
+            <h2 className="mt-9 max-w-xl text-4xl font-semibold leading-[1.06] text-balance sm:text-5xl">
+              A clearer path can begin with one private conversation.
+            </h2>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
-                key={item.href}
-                href={item.href}
-                className="text-sm text-pearl/70 transition hover:text-sand"
+                href="/contact"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-[#f1c765] px-5 text-sm font-bold text-[#2f291c] transition hover:-translate-y-0.5 hover:bg-[#f6d777]"
               >
-                {item.label}
+                Start private enquiry
+                <ArrowRight className="h-4 w-4" />
               </Link>
-            ))}
+              <a
+                href={siteConfig.phoneHref}
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-white/18 px-5 text-sm font-bold text-white transition hover:bg-white hover:text-forest"
+              >
+                <Phone className="h-4 w-4" />
+                Call admissions
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <p className="text-xs font-bold uppercase text-[#d5c9ff]">Explore</p>
+            <div className="mt-5 grid gap-3">
+              {navItems.map((item) => (
+                <Link key={item.href} href={item.href} className="text-sm text-white/62 transition hover:text-white">
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <p className="text-xs font-bold uppercase text-[#d5c9ff]">Contact</p>
+            <div className="mt-5 space-y-4 text-sm leading-6 text-white/62">
+              <p className="flex gap-3">
+                <Phone className="mt-1 h-4 w-4 shrink-0 text-[#f1c765]" />
+                <span className="grid gap-1">
+                  <a href={siteConfig.phoneHref} className="transition hover:text-white">{siteConfig.phone}</a>
+                  <a href={siteConfig.secondaryPhoneHref} className="transition hover:text-white">{siteConfig.secondaryPhone}</a>
+                </span>
+              </p>
+              <p className="flex gap-3">
+                <Mail className="mt-1 h-4 w-4 shrink-0 text-[#f1c765]" />
+                <a href={siteConfig.emailHref} className="break-all transition hover:text-white">{siteConfig.email}</a>
+              </p>
+              <p className="flex gap-3">
+                <MapPin className="mt-1 h-4 w-4 shrink-0 text-[#f1c765]" />
+                <span>{siteConfig.address}</span>
+              </p>
+            </div>
           </div>
         </div>
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sand">
-            Contact
-          </p>
-          <div className="mt-4 space-y-3 text-sm leading-6 text-pearl/70">
-            <p className="flex gap-3">
-              <Phone className="mt-1 h-4 w-4 shrink-0 text-gold" />
-              <a href={siteConfig.phoneHref} className="transition hover:text-sand">
-                {siteConfig.phone}
-              </a>
-            </p>
-            <p className="flex gap-3">
-              <Phone className="mt-1 h-4 w-4 shrink-0 text-gold" />
-              <a href={siteConfig.secondaryPhoneHref} className="transition hover:text-sand">
-                {siteConfig.secondaryPhone}
-              </a>
-            </p>
-            <p className="flex gap-3">
-              <Mail className="mt-1 h-4 w-4 shrink-0 text-gold" />
-              <a href={siteConfig.emailHref} className="transition hover:text-sand">
-                {siteConfig.email}
-              </a>
-            </p>
-            <p className="flex gap-3">
-              <MapPin className="mt-1 h-4 w-4 shrink-0 text-gold" />
-              <span>{siteConfig.address}</span>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="relative border-t border-white/10 py-5">
-        <div className="container-pad flex flex-col gap-2 text-xs text-pearl/50 sm:flex-row sm:items-center sm:justify-between">
+
+        <div className="flex flex-col gap-2 pt-6 text-xs text-white/38 sm:flex-row sm:items-center sm:justify-between">
           <p>Copyright {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
           <p>Confidential rehabilitation and wellness support.</p>
         </div>

@@ -18,10 +18,7 @@ html {
 
 body {
   margin: 0;
-  background:
-    radial-gradient(circle at top left, rgba(199, 168, 107, 0.16), transparent 36rem),
-    radial-gradient(circle at 90% 10%, rgba(169, 184, 164, 0.20), transparent 30rem),
-    linear-gradient(180deg, #FFFDF8 0%, #F8F6F2 48%, #EEF3EC 100%);
+  background: #F7F7F2;
   color: #17352A;
 }
 
@@ -82,8 +79,23 @@ textarea {
   animation: marquee 28s linear infinite;
 }
 
+.animate-hero-ribbon {
+  animation: hero-ribbon 22s linear infinite;
+}
+
+.animate-stage-ticker {
+  animation: stage-ticker 14s linear infinite;
+}
+
+.animate-gentle-float {
+  animation: gentle-float 7s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee {
+  .animate-marquee,
+  .animate-hero-ribbon,
+  .animate-stage-ticker,
+  .animate-gentle-float {
     animation: none;
   }
 }
@@ -95,5 +107,36 @@ textarea {
 
   to {
     transform: translateX(-50%);
+  }
+}
+
+@keyframes hero-ribbon {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-22%);
+  }
+}
+
+@keyframes stage-ticker {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes gentle-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
   }
 }

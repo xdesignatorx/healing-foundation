@@ -1,4 +1,5 @@
 import { ExternalLink, Mail, MapPin, Navigation, Phone } from "lucide-react";
+import { BeforeYouVisit } from "@/components/BeforeYouVisit";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Motion";
@@ -117,12 +118,13 @@ export default function ContactPage() {
           </div>
         </Reveal>
       </section>
+      <BeforeYouVisit />
       <section className="container-pad pb-20">
         <div className="overflow-hidden rounded-lg bg-forest p-8 text-pearl shadow-soft md:p-12">
           <p className="eyebrow text-sand">Privacy Note</p>
           <h2 className="mt-3 font-serif text-4xl font-semibold">Every enquiry is handled discreetly.</h2>
           <p className="mt-4 max-w-3xl text-base leading-8 text-pearl/70">
-            Calls, WhatsApp messages, emails, and enquiry form submissions should be handled with discretion by the admissions team. Connect the form to your preferred secure email, CRM, or admissions workflow before heavy promotion.
+            Calls, WhatsApp messages, emails, and enquiry form submissions are intended for private admissions guidance. Share only what feels comfortable during the first conversation.
           </p>
         </div>
       </section>

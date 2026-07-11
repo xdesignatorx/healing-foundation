@@ -2,6 +2,7 @@ import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Motion";
 import { SectionHeading } from "@/components/SectionHeading";
+import { VirtualTour } from "@/components/VirtualTour";
 import { facilities } from "@/data/site";
 
 export const metadata = {
@@ -18,6 +19,7 @@ export default function FacilitiesPage() {
         copy="The residence supports recovery through calm interiors, outdoor reflection areas, structured routines, and clinical spaces."
         image="/images/centre/exterior-night-wide.jpeg"
       />
+      <VirtualTour items={facilities} />
       <section className="container-pad py-20">
         <SectionHeading
           eyebrow="Residence"
