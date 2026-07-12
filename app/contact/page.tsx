@@ -22,7 +22,7 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="A private conversation can be the beginning of recovery."
         copy="Reach out for confidential admissions guidance, family consultation, or program suitability questions."
-        image="/images/centre/consultation-office.jpeg"
+        image="/images/centre/awareness-session.jpeg"
       />
       <section className="container-pad grid gap-10 py-20 lg:grid-cols-[0.85fr_1.15fr]">
         <Reveal>
