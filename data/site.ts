@@ -147,7 +147,7 @@ export const facilities = [
   {
     title: "Private Residential Suites",
     text: "Calm rooms designed for rest, privacy, and uninterrupted recovery.",
-    image: "/images/centre/residential-dorm.jpeg"
+    image: "/images/centre/shared-room.jpeg"
   },
   {
     title: "Therapy & Consultation Rooms",
