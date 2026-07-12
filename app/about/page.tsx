@@ -28,7 +28,7 @@ export default function AboutPage() {
         </Reveal>
         <Reveal className="relative min-h-[430px] overflow-hidden rounded-lg shadow-soft">
           <Image
-            src="/images/centre/team-office-landscape.jpeg"
+            src="/images/centre/ethos-team.png"
             alt="Healing Foundation care team in the consultation office"
             fill
             className="object-cover"
