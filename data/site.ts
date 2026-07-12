@@ -21,7 +21,7 @@ export const siteConfig = {
   tagline: "Private rehabilitation, compassionate recovery, refined care.",
   description:
     "A premium residential rehabilitation and wellness centre offering addiction recovery, mental health support, family care, and holistic healing in a calm, private setting.",
-  url: "https://healing-foundation.vercel.app",
+  url: "https://www.healingfoundationrehab.in",
   logo: "/images/brand/healing-foundation-logo.png",
   ogImage: "/images/centre/front-sign.jpeg",
   phone: "+91 78768 27691",
