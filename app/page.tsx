@@ -32,6 +32,7 @@ import {
 import { AnimatedStats } from "@/components/AnimatedStats";
 import { BrochureCTA } from "@/components/BrochureCTA";
 import { LanguageGuide } from "@/components/LanguageGuide";
+import { RecoveryPlanDashboard } from "@/components/RecoveryPlanDashboard";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { TreatmentFinder } from "@/components/TreatmentFinder";
 
@@ -143,7 +144,9 @@ export default function Home() {
 
           <Reveal className="relative mx-auto mt-14 max-w-6xl" delay={0.08}>
             <div className="absolute inset-x-12 bottom-[-2rem] h-20 bg-[#7057d9]/14 blur-3xl" />
-            <div className="relative overflow-hidden rounded-lg border border-[#242925]/12 bg-white p-2 shadow-[0_40px_100px_rgba(21,28,24,0.18)] sm:p-3">
+            <RecoveryPlanDashboard />
+            {false && (
+              <div className="hidden">
               <div className="flex h-12 items-center justify-between border-b border-forest/8 px-3 sm:px-4">
                 <div className="flex items-center gap-2">
                   <span className="h-2.5 w-2.5 rounded-full bg-[#f08d72]" />
@@ -289,7 +292,8 @@ export default function Home() {
                   </div>
                 </aside>
               </div>
-            </div>
+              </div>
+            )}
           </Reveal>
         </div>
       </section>
