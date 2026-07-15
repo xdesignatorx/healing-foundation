@@ -72,30 +72,13 @@ export default function RootLayout({
                 <Image src={siteConfig.logo} alt={`${siteConfig.name} logo`} width={96} height={96} className="h-full w-full object-cover" />
               </div>
               <p className="mb-5 inline-flex rounded-full border border-forest/10 bg-white px-5 py-2 text-xs font-bold uppercase tracking-[0.28em] text-gold shadow-soft">
-                Temporarily unavailable
+                Temporary error
               </p>
               <h1 className="font-serif text-5xl font-bold leading-tight text-forest md:text-7xl">
                 {siteConfig.name}
               </h1>
               <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-forest/70">
-                The website is currently being updated and will be back online soon. For urgent or confidential admission guidance, please contact the care team directly.
-              </p>
-              <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-                <a
-                  href={siteConfig.phoneHref}
-                  className="rounded-full bg-forest px-8 py-4 text-sm font-bold text-white shadow-soft transition hover:bg-forest/90"
-                >
-                  Call {siteConfig.phone}
-                </a>
-                <a
-                  href={siteConfig.whatsapp}
-                  className="rounded-full border border-forest/15 bg-white px-8 py-4 text-sm font-bold text-forest shadow-soft transition hover:border-gold hover:text-gold"
-                >
-                  WhatsApp now
-                </a>
-              </div>
-              <p className="mx-auto mt-8 max-w-xl text-sm leading-6 text-forest/55">
-                {siteConfig.address}
+                Error: This website is temporarily unavailable. Please try again later.
               </p>
             </section>
           </main>
