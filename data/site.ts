@@ -19,7 +19,7 @@ export const siteConfig = {
   tagline: "Design, development, and digital launch studio.",
   description:
     "DesignstryX is a Udyam-registered design and development agency creating premium websites, UI/UX, brand identity, marketing creatives, and launch-ready digital experiences.",
-  url: "https://healing-foundation.vercel.app",
+  url: "https://designstryx.vercel.app",
   logo: "/images/brand/designstryx-logo.png",
   ogImage: "/images/brand/designstryx-logo.png",
   phone: "+91 98169 44777",
@@ -42,7 +42,6 @@ export const navItems = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Process", href: "/process" },
-  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" }
 ];
 
@@ -232,30 +231,6 @@ export const faqs = [
     question: "How can I start a project?",
     answer:
       "Call, WhatsApp, or email with your business type, target audience, services, reference links, and deadline."
-  }
-];
-
-export const blogPosts = [
-  {
-    slug: "premium-website-checklist",
-    title: "What Makes a Website Feel Premium?",
-    excerpt: "A practical checklist covering typography, spacing, motion, trust, content, and conversion design.",
-    date: "2026-07-19",
-    image: "/images/centre/ethos-team.png"
-  },
-  {
-    slug: "landing-page-that-converts",
-    title: "How to Plan a Landing Page That Converts",
-    excerpt: "Offer clarity, sections, social proof, CTA placement, and page rhythm for stronger leads.",
-    date: "2026-07-19",
-    image: "/images/centre/consultation-office.jpeg"
-  },
-  {
-    slug: "why-vercel-for-business-sites",
-    title: "Why Vercel Works Well for Modern Business Websites",
-    excerpt: "Fast deployments, stable previews, clean hosting, and simple workflows for professional web projects.",
-    date: "2026-07-19",
-    image: "/images/centre/team-office-landscape.jpeg"
   }
 ];
 

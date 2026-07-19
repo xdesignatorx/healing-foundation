@@ -22,22 +22,22 @@ export function Header() {
   }, []);
 
   return (
-    <header className="pointer-events-none fixed inset-x-0 top-0 z-50">
+    <header className="pointer-events-none fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-[#05060d]/42 backdrop-blur-xl">
       <div className="container-pad">
         <div
-          className={`pointer-events-auto mx-auto mt-5 flex max-w-7xl items-center justify-between rounded-2xl border px-4 py-3 backdrop-blur-2xl transition duration-300 ${
+          className={`pointer-events-auto mx-auto flex max-w-7xl items-center justify-between px-0 py-4 transition duration-300 ${
             scrolled
-              ? "border-white/18 bg-[#070812]/92 shadow-[0_18px_60px_rgba(0,0,0,0.45)]"
-              : "border-white/22 bg-[#05060d]/82 shadow-[0_18px_70px_rgba(0,0,0,0.32)]"
+              ? "bg-[#05060d]/58"
+              : "bg-transparent"
           }`}
         >
           <Link href="/" className="flex min-w-0 items-center gap-3">
-            <span className="relative grid h-14 w-14 shrink-0 place-items-center overflow-hidden rounded-xl border border-white/18 bg-black shadow-[0_0_30px_rgba(255,112,0,0.28)]">
+            <span className="relative grid h-12 w-12 shrink-0 place-items-center overflow-hidden rounded-xl bg-[#ff7a00] shadow-[0_0_30px_rgba(255,112,0,0.28)]">
               <Image
                 src={siteConfig.logo}
                 alt={`${siteConfig.name} logo`}
                 fill
-                sizes="56px"
+                sizes="48px"
                 className="object-contain p-1"
                 priority
               />
@@ -46,21 +46,21 @@ export function Header() {
               <span className="block truncate text-xl font-black uppercase tracking-[-0.04em] text-white">
                 {siteConfig.name}
               </span>
-              <span className="mt-0.5 block truncate font-mono text-[0.6rem] uppercase tracking-[0.22em] text-white/42">
+              <span className="mt-0.5 block truncate font-mono text-[0.6rem] uppercase tracking-[0.22em] text-white/60">
                 AI digital studio
               </span>
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-1 rounded-full border border-white/14 bg-black/32 px-2 py-2 lg:flex">
+          <nav className="hidden items-center gap-9 lg:flex">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`rounded-full px-4 py-2.5 text-sm font-black transition xl:px-5 ${
+                className={`relative py-2 text-sm font-bold transition ${
                   isActive(item.href)
-                    ? "bg-[#ff7a00] text-white shadow-[0_0_24px_rgba(255,122,0,0.32)]"
-                    : "text-white/78 hover:bg-white/8 hover:text-white"
+                    ? "text-[#ff7a00] after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:bg-[#ff7a00]"
+                    : "text-white/62 hover:text-white"
                 }`}
               >
                 {item.label}

@@ -3,7 +3,7 @@ import { faqs, siteConfig } from "@/data/site";
 export function StructuredData() {
   const localBusiness = {
     "@context": "https://schema.org",
-    "@type": "MedicalBusiness",
+    "@type": "ProfessionalService",
     name: siteConfig.name,
     description: siteConfig.description,
     url: siteConfig.url,
@@ -12,8 +12,8 @@ export function StructuredData() {
     email: siteConfig.email,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Mehta Market, Opp. Tata Motors",
-      addressLocality: "Kumarhatti",
+      streetAddress: "India-based remote creative studio",
+      addressLocality: "Solan",
       addressRegion: "Himachal Pradesh",
       addressCountry: "IN"
     },
@@ -57,7 +57,7 @@ export function StructuredData() {
     potentialAction: {
       "@type": "ContactAction",
       target: siteConfig.whatsapp,
-      name: "Confidential WhatsApp enquiry"
+      name: "Start a DesignstryX project"
     }
   };
 

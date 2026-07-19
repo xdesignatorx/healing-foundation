@@ -4,10 +4,7 @@ const CORE_ASSETS = [
   "/about",
   "/services",
   "/process",
-  "/gallery",
-  "/blog",
   "/contact",
-  "/brochure",
   "/images/brand/designstryx-logo.png"
 ];
 

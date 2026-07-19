@@ -13,12 +13,12 @@ export function PWAInstallPrompt() {
   const [dismissed, setDismissed] = useState(true);
 
   useEffect(() => {
-    setDismissed(window.localStorage.getItem("hf-install-dismissed") === "true");
+    setDismissed(window.localStorage.getItem("designstryx-install-dismissed") === "true");
 
     const handleBeforeInstallPrompt = (event: Event) => {
       event.preventDefault();
       setPromptEvent(event as BeforeInstallPromptEvent);
-      setDismissed(window.localStorage.getItem("hf-install-dismissed") === "true");
+      setDismissed(window.localStorage.getItem("designstryx-install-dismissed") === "true");
     };
 
     window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
@@ -37,7 +37,7 @@ export function PWAInstallPrompt() {
       <button
         type="button"
         onClick={() => {
-          window.localStorage.setItem("hf-install-dismissed", "true");
+          window.localStorage.setItem("designstryx-install-dismissed", "true");
           setDismissed(true);
         }}
         className="absolute right-2 top-2 grid h-7 w-7 place-items-center rounded-full text-forest/50 hover:bg-forest/5 hover:text-forest"
@@ -45,9 +45,9 @@ export function PWAInstallPrompt() {
       >
         <X className="h-4 w-4" />
       </button>
-      <p className="pr-6 text-sm font-bold">Install Healing Foundation</p>
+      <p className="pr-6 text-sm font-bold">Install DesignstryX</p>
       <p className="mt-2 text-xs leading-5 text-ink/58">
-        Save this website on your device for quick access to calls, map, and enquiry.
+        Save this website on your device for quick access to calls, WhatsApp, and project enquiries.
       </p>
       <button
         type="button"
