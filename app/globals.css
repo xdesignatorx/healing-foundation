@@ -91,11 +91,84 @@ textarea {
   animation: gentle-float 7s ease-in-out infinite;
 }
 
+.network-grid {
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(255,255,255,0.55) 0 2px, transparent 3px),
+    radial-gradient(circle at 23% 40%, rgba(255,255,255,0.45) 0 2px, transparent 3px),
+    radial-gradient(circle at 34% 58%, rgba(255,255,255,0.36) 0 2px, transparent 3px),
+    radial-gradient(circle at 58% 23%, rgba(13,101,255,0.60) 0 3px, transparent 4px),
+    radial-gradient(circle at 72% 46%, rgba(255,255,255,0.48) 0 2px, transparent 3px),
+    radial-gradient(circle at 84% 31%, rgba(255,255,255,0.45) 0 2px, transparent 3px),
+    linear-gradient(24deg, transparent 0 20%, rgba(255,255,255,0.08) 20.2% 20.45%, transparent 20.7% 100%),
+    linear-gradient(146deg, transparent 0 38%, rgba(255,255,255,0.06) 38.2% 38.45%, transparent 38.7% 100%),
+    linear-gradient(88deg, transparent 0 48%, rgba(13,101,255,0.08) 48.2% 48.38%, transparent 48.6% 100%);
+  background-size: 520px 520px, 680px 680px, 740px 740px, 620px 620px, 560px 560px, 780px 780px, 900px 900px, 1100px 1100px, 100% 100%;
+  animation: network-drift 22s ease-in-out infinite alternate;
+}
+
+.orbit {
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 9999px;
+  transform: translate(-50%, -50%);
+}
+
+.orbit::after {
+  content: "";
+  position: absolute;
+  right: 16%;
+  top: 8%;
+  height: 18px;
+  width: 18px;
+  border: 3px solid rgba(255,122,0,0.42);
+  border-radius: 9999px;
+  box-shadow: 0 0 30px rgba(255,122,0,0.24);
+}
+
+.orbit-one {
+  height: 760px;
+  width: 760px;
+  animation: orbit-spin 28s linear infinite;
+}
+
+.orbit-two {
+  height: 1060px;
+  width: 1060px;
+  animation: orbit-spin 42s linear infinite reverse;
+}
+
+.hero-swoosh {
+  position: absolute;
+  bottom: -0.05em;
+  left: 50%;
+  height: 0.08em;
+  width: 115%;
+  transform: translateX(-50%) rotate(-1deg);
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #ff7a00, #b98576, #0d65ff);
+  box-shadow: 0 0 26px rgba(13,101,255,0.35);
+  animation: swoosh-glow 3s ease-in-out infinite alternate;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #ffffff, #ff8b1a 38%, #0d65ff 78%, #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee,
   .animate-hero-ribbon,
   .animate-stage-ticker,
-  .animate-gentle-float {
+  .animate-gentle-float,
+  .network-grid,
+  .orbit-one,
+  .orbit-two,
+  .hero-swoosh {
     animation: none;
   }
 }
@@ -138,5 +211,39 @@ textarea {
 
   50% {
     transform: translateY(-8px);
+  }
+}
+
+@keyframes network-drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: brightness(0.92);
+  }
+
+  to {
+    transform: translate3d(-28px, 18px, 0) scale(1.03);
+    filter: brightness(1.12);
+  }
+}
+
+@keyframes orbit-spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes swoosh-glow {
+  from {
+    opacity: 0.72;
+    transform: translateX(-50%) rotate(-1deg) scaleX(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) rotate(-1deg) scaleX(1);
   }
 }

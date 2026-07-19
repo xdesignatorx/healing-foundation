@@ -1,6 +1,6 @@
 "use client";
 
-import { Menu, Phone, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -19,38 +19,38 @@ export function Header() {
   }, []);
 
   return (
-    <header className="pointer-events-none fixed inset-x-0 top-4 z-50">
+    <header className="pointer-events-none fixed inset-x-0 top-0 z-50">
       <div className="container-pad">
         <div
-          className={`pointer-events-auto grid grid-cols-[1fr_auto_1fr] items-center rounded-full border px-3 py-2 backdrop-blur-2xl transition duration-300 ${
+          className={`pointer-events-auto mx-auto mt-5 flex max-w-7xl items-center justify-between rounded-2xl border px-4 py-3 backdrop-blur-2xl transition duration-300 ${
             scrolled
-              ? "border-white/12 bg-[#080808]/88 shadow-soft"
-              : "border-white/14 bg-[#080808]/72"
+              ? "border-white/12 bg-[#070812]/88 shadow-[0_18px_60px_rgba(0,0,0,0.35)]"
+              : "border-white/8 bg-[#080915]/48"
           }`}
         >
           <Link href="/" className="flex min-w-0 items-center gap-3">
-            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#d5ff65] text-lg font-black tracking-[-0.08em] text-[#080808]">
-              DX
+            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-gradient-to-br from-[#ff7a00] to-[#d95700] text-xl font-black text-white shadow-[0_0_30px_rgba(255,112,0,0.35)]">
+              D
             </span>
             <span className="min-w-0">
-              <span className="block truncate text-base font-black uppercase tracking-[-0.04em] text-white">
+              <span className="block truncate text-xl font-black uppercase tracking-[-0.04em] text-white">
                 {siteConfig.name}
               </span>
-              <span className="mt-0.5 block truncate text-[0.58rem] font-black uppercase tracking-[0.22em] text-[#d5ff65]">
-                Digital studio
+              <span className="mt-0.5 block truncate font-mono text-[0.6rem] uppercase tracking-[0.22em] text-white/42">
+                AI digital studio
               </span>
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-1 rounded-full border border-white/10 bg-white/6 p-1 lg:flex">
+          <nav className="hidden items-center gap-9 lg:flex">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`rounded-full px-4 py-2 text-xs font-black uppercase tracking-[0.08em] transition ${
+                className={`text-sm font-bold transition ${
                   pathname === item.href
-                    ? "bg-[#d5ff65] text-[#080808]"
-                    : "text-white/72 hover:bg-white hover:text-[#080808]"
+                    ? "text-[#ff7a00]"
+                    : "text-white/58 hover:text-[#ff7a00]"
                 }`}
               >
                 {item.label}
@@ -58,28 +58,24 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="hidden items-center justify-end gap-2 lg:flex">
-            <a
-              href={siteConfig.phoneHref}
-              aria-label="Call DesignstryX"
-              title="Call DesignstryX"
-              className="grid h-11 w-11 place-items-center rounded-full border border-white/14 text-white transition hover:bg-white hover:text-[#080808]"
-            >
-              <Phone className="h-4 w-4" />
-            </a>
+          <div className="hidden items-center gap-4 lg:flex">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#00f0a8]/20 bg-[#00f0a8]/8 px-4 py-2 font-mono text-xs font-bold uppercase tracking-[0.18em] text-[#00f0a8]">
+              <span className="h-2 w-2 rounded-full bg-[#00f0a8] shadow-[0_0_18px_#00f0a8]" />
+              AI live
+            </span>
             <a
               href={siteConfig.whatsapp}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex h-11 items-center rounded-full bg-[#d5ff65] px-5 text-xs font-black uppercase tracking-[0.08em] text-[#080808] transition hover:-translate-y-0.5 hover:bg-white"
+              className="inline-flex h-12 items-center rounded-lg bg-gradient-to-br from-[#ff8b1a] to-[#f15a00] px-6 text-sm font-black text-white shadow-[0_18px_45px_rgba(255,112,0,0.28)] transition hover:-translate-y-0.5 hover:shadow-[0_24px_60px_rgba(255,112,0,0.38)]"
             >
-              Start project
+              Get Started
             </a>
           </div>
 
           <button
             type="button"
-            className="col-start-3 ml-auto grid h-11 w-11 place-items-center rounded-full border border-white/14 text-white transition hover:bg-white hover:text-[#080808] lg:hidden"
+            className="grid h-11 w-11 place-items-center rounded-lg border border-white/12 text-white transition hover:bg-white hover:text-[#070812] lg:hidden"
             onClick={() => setOpen((value) => !value)}
             aria-expanded={open}
             aria-label="Toggle navigation"
@@ -89,36 +85,27 @@ export function Header() {
         </div>
 
         {open && (
-          <div className="pointer-events-auto mt-2 overflow-hidden rounded-[1.5rem] border border-white/12 bg-[#080808] p-3 shadow-soft lg:hidden">
+          <div className="pointer-events-auto mt-2 overflow-hidden rounded-2xl border border-white/10 bg-[#080915] p-3 shadow-soft lg:hidden">
             <nav className="grid gap-1">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-2xl px-4 py-4 text-sm font-black uppercase tracking-[0.08em] text-white/76 transition hover:bg-[#d5ff65] hover:text-[#080808]"
+                  className="rounded-xl px-4 py-4 text-sm font-bold text-white/70 transition hover:bg-[#ff7a00] hover:text-white"
                 >
                   {item.label}
                 </Link>
               ))}
             </nav>
-            <div className="mt-2 grid gap-2 border-t border-white/10 pt-3 sm:grid-cols-2">
-              <a
-                href={siteConfig.phoneHref}
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-2xl border border-white/12 text-sm font-black text-white"
-              >
-                <Phone className="h-4 w-4" />
-                Call
-              </a>
-              <a
-                href={siteConfig.whatsapp}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex h-12 items-center justify-center rounded-2xl bg-[#d5ff65] text-sm font-black text-[#080808]"
-              >
-                Start project
-              </a>
-            </div>
+            <a
+              href={siteConfig.whatsapp}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-2 inline-flex h-12 w-full items-center justify-center rounded-xl bg-[#ff7a00] text-sm font-black text-white"
+            >
+              Get Started
+            </a>
           </div>
         )}
       </div>
