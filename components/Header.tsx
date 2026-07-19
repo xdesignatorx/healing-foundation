@@ -32,13 +32,13 @@ export function Header() {
           }`}
         >
           <Link href="/" className="flex min-w-0 items-center gap-4">
-            <span className="relative grid h-16 w-16 shrink-0 place-items-center overflow-hidden rounded-xl border border-white/10 bg-white/5 shadow-[0_0_34px_rgba(255,178,72,0.18)] backdrop-blur">
+            <span className="relative grid h-20 w-20 shrink-0 place-items-center overflow-hidden">
               <Image
                 src={siteConfig.logo}
                 alt={`${siteConfig.name} logo`}
                 fill
-                sizes="64px"
-                className="object-contain p-0.5"
+                sizes="80px"
+                className="object-contain"
                 priority
               />
             </span>
