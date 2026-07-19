@@ -1,260 +1,210 @@
 import {
   ArrowRight,
-  BadgeCheck,
   Brush,
-  Check,
   Code2,
   Globe2,
-  LayoutDashboard,
+  Layers3,
   Mail,
   Megaphone,
   MessageCircle,
-  MousePointer2,
+  MousePointerClick,
   Palette,
-  PenTool,
   Phone,
   Play,
-  Rocket,
+  ShieldCheck,
   ShoppingBag,
   Sparkles,
   Stars,
-  Wand2,
   Zap
 } from "lucide-react";
 import { Reveal } from "@/components/Motion";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { siteConfig } from "@/data/site";
 
-const services = [
+const serviceCards = [
+  ["Digital Strategy", "Offer clarity, audience positioning, competitor scan, and launch roadmap.", Sparkles],
+  ["Website Design", "High-impact business websites, landing pages, portfolio sites, and product pages.", Globe2],
+  ["Web Development", "Next.js, React, Tailwind, Framer Motion, forms, SEO, and Vercel deployment.", Code2],
+  ["UI/UX Design", "Mobile app screens, dashboards, SaaS flows, prototypes, and design systems.", Layers3],
+  ["Brand Identity", "Logo direction, visual language, colors, typography, and social brand kits.", Palette],
+  ["Marketing Creatives", "Campaign visuals, ad creatives, banners, thumbnails, launch graphics, and reels.", Megaphone],
+  ["Graphic Design", "Posters, brochures, decks, flyers, print-ready designs, and business collateral.", Brush],
+  ["Motion Assets", "Animated sections, interaction ideas, simple promo videos, and scroll motion.", Play],
+  ["Ecommerce", "Storefront design, product pages, offer pages, and conversion-first shopping UI.", ShoppingBag]
+] as const;
+
+const manifesto = [
+  "Imagination",
+  "Implementation",
+  "Perspective",
+  "Performance",
+  "Identity",
+  "Motion",
+  "Conversion"
+];
+
+const approach = [
   {
-    title: "Website Design",
-    text: "Premium landing pages, business websites, portfolio sites, and conversion-focused UI systems.",
-    icon: Globe2
+    title: "We listen before we design.",
+    text: "Every project starts by understanding the business, offer, audience, and the exact action the website must create."
   },
   {
-    title: "Web Development",
-    text: "Fast Next.js builds, responsive frontend development, CMS-ready structures, and Vercel deployment.",
-    icon: Code2
+    title: "We build a memorable direction.",
+    text: "Typography, color, hierarchy, movement, and copy come together so the brand feels intentional, not generic."
   },
   {
-    title: "Product & App UI",
-    text: "Dashboards, SaaS interfaces, mobile app screens, design systems, and interactive prototypes.",
-    icon: LayoutDashboard
-  },
-  {
-    title: "Brand Identity",
-    text: "Logo direction, color systems, typography, social media identity, and launch-ready brand kits.",
-    icon: Palette
-  },
-  {
-    title: "Graphic Design",
-    text: "Posters, banners, ad creatives, brochures, presentation decks, thumbnails, and campaign assets.",
-    icon: Brush
-  },
-  {
-    title: "Marketing Creatives",
-    text: "Scroll-stopping visuals for Instagram, Meta ads, Google campaigns, WhatsApp sharing, and launches.",
-    icon: Megaphone
-  },
-  {
-    title: "No-Code Builds",
-    text: "Fast MVPs, automation-ready forms, workflow pages, business tools, and content-driven microsites.",
-    icon: Wand2
-  },
-  {
-    title: "Motion & Video Assets",
-    text: "Animated sections, launch reels, UI motion, simple product videos, and premium page transitions.",
-    icon: Play
-  },
-  {
-    title: "Ecommerce Stores",
-    text: "Shop pages, product landing pages, checkout-ready experiences, and conversion-first storefront UI.",
-    icon: ShoppingBag
+    title: "We ship with discipline.",
+    text: "Responsive QA, SEO basics, Vercel deployment, domain guidance, and final polish are handled before launch."
   }
 ];
 
-const stack = [
-  "Next.js",
-  "React",
-  "Tailwind CSS",
-  "Framer Motion",
-  "Vercel",
-  "Figma-style UI",
-  "SEO metadata",
-  "Responsive design"
-];
-
-const process = [
-  {
-    title: "Discover",
-    text: "We define the offer, target audience, pages, content structure, and conversion goals."
-  },
-  {
-    title: "Design",
-    text: "A premium visual direction is shaped with typography, spacing, interactions, and page rhythm."
-  },
-  {
-    title: "Build",
-    text: "The site is developed cleanly with responsive layouts, smooth motion, SEO, and fast performance."
-  },
-  {
-    title: "Launch",
-    text: "Deployment, domain setup, final checks, and post-launch guidance are handled end to end."
-  }
+const stats = [
+  ["09+", "creative service lines"],
+  ["100%", "responsive-first layouts"],
+  ["24hr", "fast project response"],
+  ["Udyam", "registered studio"]
 ];
 
 const faqs = [
   {
-    question: "What kind of projects does DesignstryX handle?",
+    question: "Is DesignstryX only a design agency?",
     answer:
-      "DesignstryX handles premium business websites, landing pages, UI/UX design, frontend development, ecommerce pages, brand identity, marketing creatives, and modern web experiences."
+      "No. DesignstryX handles both design and implementation: UI/UX, brand identity, frontend development, marketing creatives, ecommerce pages, and Vercel deployment."
   },
   {
-    question: "Can you design and develop the full website?",
+    question: "Can you build a website from only a reference link?",
     answer:
-      "Yes. Design, development, responsive setup, SEO metadata, deployment, WhatsApp/call CTAs, forms, and Vercel launch can be handled in one complete workflow."
+      "Yes. A reference can be used for direction, but the final website is designed as an original custom experience for your brand, audience, and offer."
   },
   {
-    question: "Is DesignstryX officially registered?",
+    question: "Do you provide domain and hosting support?",
     answer:
-      "Yes. DesignstryX is registered on the Udyam portal. Certificate details can be shared or added to the website when required."
+      "Yes. DesignstryX can guide domain connection, Vercel deployment, DNS setup, and launch checks. Domain purchase and third-party hosting fees are separate."
   },
   {
-    question: "How do I start a project?",
+    question: "Is DesignstryX registered?",
     answer:
-      "Send a WhatsApp message, call, or email with your business type, pages required, reference links, and deadline. A clear plan can be prepared from there."
+      "Yes. DesignstryX is Udyam registered. Certificate details can be added to the website later as a trust section."
   }
 ];
 
 export default function Home() {
   return (
     <>
-      <section className="relative overflow-hidden bg-[#f7f5ec] pt-32 text-[#101713] sm:pt-40">
-        <div className="absolute left-1/2 top-20 h-72 w-72 -translate-x-1/2 rounded-full bg-[#7c5cff]/15 blur-3xl" />
-        <div className="absolute right-0 top-40 h-80 w-80 rounded-full bg-[#f7c948]/20 blur-3xl" />
-        <div className="container-pad relative">
-          <Reveal className="mx-auto max-w-6xl text-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#171c19]/10 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#6d52e7] shadow-card">
+      <section className="relative min-h-screen overflow-hidden bg-[#070707] pt-28 text-white">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(213,255,101,0.2),transparent_28%),radial-gradient(circle_at_78%_12%,rgba(116,91,255,0.28),transparent_30%),linear-gradient(135deg,#070707_0%,#121212_45%,#050505_100%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-52 bg-gradient-to-t from-[#d5ff65]/10 to-transparent" />
+        <div className="container-pad relative grid min-h-[calc(100vh-7rem)] gap-10 pb-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
+          <Reveal className="pb-10">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/8 px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-[#d5ff65] backdrop-blur">
               <Sparkles className="h-4 w-4" />
-              Design, development, and digital launch studio
+              DesignstryX digital studio
             </span>
-            <h1 className="mx-auto mt-8 max-w-6xl text-6xl font-black leading-[0.9] tracking-[-0.06em] text-[#101713] sm:text-8xl lg:text-[9.5rem]">
-              Your brand deserves a sharper digital presence.
+            <h1 className="mt-7 max-w-5xl text-[4.7rem] font-black uppercase leading-[0.78] tracking-[-0.09em] sm:text-[7rem] lg:text-[9.4rem]">
+              Digital
+              <span className="block text-[#d5ff65]">Distinction</span>
             </h1>
-            <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-[#101713]/68 sm:text-xl">
-              DesignstryX builds premium websites, interfaces, brand assets, and launch-ready digital experiences that look expensive, load fast, and help people take action.
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-white/68">
+              We turn ambitious ideas into premium websites, brand systems, interfaces, and marketing assets that feel sharp, modern, and built to convert.
             </p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <a
                 href={siteConfig.whatsapp}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-[#101713] px-7 text-sm font-bold text-white shadow-soft transition hover:-translate-y-1 hover:bg-[#6d52e7]"
+                className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-[#d5ff65] px-7 text-sm font-black text-[#070707] transition hover:-translate-y-1 hover:bg-white"
               >
-                Start on WhatsApp
+                Start a project
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a
                 href={siteConfig.phoneHref}
-                className="inline-flex h-14 items-center justify-center gap-2 rounded-full border border-[#101713]/12 bg-white px-7 text-sm font-bold text-[#101713] transition hover:-translate-y-1 hover:border-[#6d52e7] hover:text-[#6d52e7]"
+                className="inline-flex h-14 items-center justify-center gap-2 rounded-full border border-white/18 px-7 text-sm font-black text-white transition hover:-translate-y-1 hover:bg-white hover:text-[#070707]"
               >
                 <Phone className="h-4 w-4" />
-                Call DesignstryX
+                Talk to Bharat
               </a>
             </div>
           </Reveal>
 
-          <Reveal className="mx-auto mt-16 max-w-6xl" delay={0.08}>
-            <div className="overflow-hidden rounded-[2rem] border border-[#101713]/10 bg-white shadow-[0_30px_90px_rgba(16,23,19,0.12)]">
-              <div className="flex h-14 items-center justify-between border-b border-[#101713]/10 px-5">
-                <div className="flex gap-2">
-                  <span className="h-3 w-3 rounded-full bg-[#ff7a7a]" />
-                  <span className="h-3 w-3 rounded-full bg-[#ffd15c]" />
-                  <span className="h-3 w-3 rounded-full bg-[#72d69b]" />
+          <Reveal className="relative" delay={0.08}>
+            <div className="absolute -left-10 -top-10 h-36 w-36 rounded-full bg-[#745bff] blur-3xl" />
+            <div className="relative rounded-[2rem] border border-white/12 bg-white/8 p-4 shadow-[0_30px_100px_rgba(0,0,0,0.45)] backdrop-blur-xl">
+              <div className="rounded-[1.5rem] bg-[#f4f0e6] p-5 text-[#080808]">
+                <div className="flex items-center justify-between">
+                  <span className="rounded-full bg-[#080808] px-4 py-2 text-xs font-black uppercase text-[#d5ff65]">Live build board</span>
+                  <span className="text-xs font-black text-[#080808]/40">DX-01</span>
                 </div>
-                <span className="text-xs font-bold text-[#101713]/50">designstryx.studio</span>
-              </div>
-              <div className="grid min-h-[460px] gap-4 bg-[#111713] p-4 text-white md:grid-cols-[1.1fr_0.9fr]">
-                <div className="flex flex-col justify-between rounded-[1.5rem] bg-[#efe9ff] p-8 text-[#181126]">
-                  <div>
-                    <span className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 text-xs font-bold text-[#6d52e7]">
-                      <MousePointer2 className="h-4 w-4" />
-                      Conversion-first interface
-                    </span>
-                    <h2 className="mt-8 max-w-xl text-5xl font-black leading-[0.96] tracking-[-0.04em] sm:text-6xl">
-                      Strategy, visuals, code, and launch in one place.
-                    </h2>
-                  </div>
-                  <div className="mt-8 grid gap-3 sm:grid-cols-3">
-                    {["Premium UI", "Fast build", "Live support"].map((item) => (
-                      <div key={item} className="rounded-2xl bg-white p-4 text-sm font-bold shadow-card">
-                        <Check className="mb-3 h-5 w-5 text-[#6d52e7]" />
-                        {item}
+                <div className="mt-10 grid gap-3">
+                  {[
+                    ["Brand pulse", "92%"],
+                    ["Conversion clarity", "88%"],
+                    ["Launch readiness", "96%"]
+                  ].map(([label, width]) => (
+                    <div key={label} className="rounded-2xl bg-white p-4 shadow-card">
+                      <div className="flex items-center justify-between text-sm font-black">
+                        <span>{label}</span>
+                        <span className="text-[#745bff]">{width}</span>
                       </div>
-                    ))}
-                  </div>
+                      <div className="mt-3 h-2 rounded-full bg-[#080808]/8">
+                        <div className="h-full rounded-full bg-[#745bff]" style={{ width }} />
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <div className="grid gap-4">
-                  <div className="rounded-[1.5rem] bg-[#d5ff65] p-7 text-[#101713]">
-                    <Rocket className="h-8 w-8" />
-                    <p className="mt-8 text-4xl font-black tracking-[-0.04em]">Launch-ready websites for serious brands.</p>
+                <div className="mt-4 grid grid-cols-2 gap-3">
+                  <div className="rounded-2xl bg-[#d5ff65] p-5">
+                    <MousePointerClick className="h-6 w-6" />
+                    <p className="mt-8 text-2xl font-black leading-none tracking-[-0.04em]">Clickable experiences</p>
                   </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="rounded-[1.5rem] bg-[#ff8e6e] p-5 text-[#23120d]">
-                      <Stars className="h-7 w-7" />
-                      <p className="mt-10 text-2xl font-black tracking-[-0.04em]">Visual systems</p>
-                    </div>
-                    <div className="rounded-[1.5rem] bg-[#6d52e7] p-5">
-                      <Zap className="h-7 w-7" />
-                      <p className="mt-10 text-2xl font-black tracking-[-0.04em]">Smooth motion</p>
-                    </div>
+                  <div className="rounded-2xl bg-[#ff875f] p-5">
+                    <Zap className="h-6 w-6" />
+                    <p className="mt-8 text-2xl font-black leading-none tracking-[-0.04em]">Fast visual impact</p>
                   </div>
                 </div>
               </div>
             </div>
           </Reveal>
-        </div>
-
-        <div className="mt-20 overflow-hidden border-y border-[#101713]/10 bg-[#d5ff65] py-5">
-          <div className="animate-marquee flex w-max gap-10 text-lg font-black uppercase tracking-[-0.02em] text-[#101713]">
-            {[...services, ...services].map((service, index) => (
-              <span key={`${service.title}-${index}`} className="inline-flex items-center gap-10">
-                {service.title}
-                <span className="h-2 w-2 rounded-full bg-[#101713]" />
-              </span>
-            ))}
-          </div>
         </div>
       </section>
 
-      <section id="services" className="bg-[#101713] py-24 text-white sm:py-32">
+      <section className="overflow-hidden border-y border-[#080808] bg-[#d5ff65] py-6 text-[#080808]">
+        <div className="animate-marquee flex w-max gap-8 text-2xl font-black uppercase tracking-[-0.05em] sm:text-4xl">
+          {[...manifesto, ...manifesto, ...manifesto].map((word, index) => (
+            <span key={`${word}-${index}`} className="inline-flex items-center gap-8">
+              {word}
+              <Stars className="h-6 w-6" />
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <section id="services" className="bg-[#f4f0e6] py-24 text-[#080808] sm:py-32">
         <div className="container-pad">
-          <Reveal className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <Reveal className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#d5ff65]">Services</p>
-              <h2 className="mt-5 max-w-3xl text-5xl font-black leading-[0.98] tracking-[-0.05em] sm:text-7xl">
-                Everything your digital brand needs.
+              <p className="text-xs font-black uppercase tracking-[0.24em] text-[#745bff]">What we deliver</p>
+              <h2 className="mt-5 text-6xl font-black uppercase leading-[0.85] tracking-[-0.08em] sm:text-8xl">
+                Services with serious range.
               </h2>
             </div>
-            <p className="max-w-xl text-base leading-8 text-white/62">
-              From one-page launch sites to full UI systems, DesignstryX covers strategy, design, build, and deployment with a polished modern finish.
+            <p className="max-w-2xl text-lg leading-8 text-[#080808]/62 lg:ml-auto">
+              One studio for design, code, identity, campaign visuals, motion, and deployment. Pick one service or build a complete launch system.
             </p>
           </Reveal>
 
-          <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service, index) => (
-              <Reveal key={service.title} delay={(index % 3) * 0.04}>
-                <article className="group min-h-72 rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-7 transition hover:-translate-y-1 hover:bg-white hover:text-[#101713]">
-                  <div className="flex items-start justify-between gap-4">
-                    <span className="grid h-12 w-12 place-items-center rounded-2xl bg-[#d5ff65] text-[#101713]">
-                      <service.icon className="h-6 w-6" />
+          <div className="mt-14 grid gap-px overflow-hidden rounded-[2rem] border border-[#080808] bg-[#080808] md:grid-cols-2 lg:grid-cols-3">
+            {serviceCards.map(([title, text, Icon], index) => (
+              <Reveal key={title} delay={(index % 3) * 0.04}>
+                <article className="group min-h-80 bg-[#f4f0e6] p-7 transition hover:bg-[#080808] hover:text-white">
+                  <div className="flex items-start justify-between">
+                    <span className="grid h-14 w-14 place-items-center rounded-2xl bg-[#080808] text-[#d5ff65] transition group-hover:bg-[#d5ff65] group-hover:text-[#080808]">
+                      <Icon className="h-7 w-7" />
                     </span>
-                    <span className="text-sm font-black text-white/24 transition group-hover:text-[#101713]/28">
-                      0{index + 1}
-                    </span>
+                    <span className="font-black text-[#080808]/18 transition group-hover:text-white/24">0{index + 1}</span>
                   </div>
-                  <h3 className="mt-12 text-3xl font-black tracking-[-0.04em]">{service.title}</h3>
-                  <p className="mt-4 text-sm leading-7 text-white/58 transition group-hover:text-[#101713]/64">{service.text}</p>
+                  <h3 className="mt-16 text-4xl font-black tracking-[-0.06em]">{title}</h3>
+                  <p className="mt-4 text-sm leading-7 text-[#080808]/62 transition group-hover:text-white/62">{text}</p>
                 </article>
               </Reveal>
             ))}
@@ -262,49 +212,39 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="work" className="bg-[#f7f5ec] py-24 text-[#101713] sm:py-32">
+      <section id="work" className="bg-[#080808] py-24 text-white sm:py-32">
         <div className="container-pad">
-          <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
+          <div className="grid gap-10 lg:grid-cols-[1fr_0.82fr] lg:items-center">
             <Reveal>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#6d52e7]">Capabilities</p>
-              <h2 className="mt-5 text-5xl font-black leading-[0.98] tracking-[-0.05em] sm:text-7xl">
-                Built for founders, local businesses, creators, and growing teams.
+              <p className="text-xs font-black uppercase tracking-[0.24em] text-[#d5ff65]">Our approach</p>
+              <h2 className="mt-5 text-6xl font-black uppercase leading-[0.85] tracking-[-0.08em] sm:text-8xl">
+                We don&apos;t decorate. We direct attention.
               </h2>
-              <p className="mt-6 text-base leading-8 text-[#101713]/64">
-                DesignstryX is Udyam-registered and built as a serious creative technology studio, not a template shop. Certificate upload can be added later as a trust badge.
-              </p>
             </Reveal>
             <Reveal delay={0.06}>
-              <div className="grid gap-3 sm:grid-cols-2">
-                {stack.map((item) => (
-                  <div key={item} className="flex items-center gap-3 rounded-2xl border border-[#101713]/10 bg-white px-4 py-4 text-sm font-bold shadow-card">
-                    <BadgeCheck className="h-5 w-5 text-[#6d52e7]" />
-                    {item}
-                  </div>
-                ))}
+              <div className="rounded-[2rem] border border-white/12 bg-white/8 p-7 backdrop-blur">
+                <p className="text-xl font-black leading-8">
+                  DesignstryX is built for clients who want their digital presence to feel current, credible, and memorable without wasting weeks in confusion.
+                </p>
+                <div className="mt-7 grid grid-cols-2 gap-3">
+                  {["Udyam registered", "Fast response", "Vercel ready", "Mobile-first"].map((item) => (
+                    <p key={item} className="flex items-center gap-2 rounded-xl bg-white/8 px-3 py-3 text-xs font-bold text-white/72">
+                      <ShieldCheck className="h-4 w-4 text-[#d5ff65]" />
+                      {item}
+                    </p>
+                  ))}
+                </div>
               </div>
             </Reveal>
           </div>
-        </div>
-      </section>
 
-      <section id="process" className="bg-[#efe9ff] py-24 text-[#181126] sm:py-32">
-        <div className="container-pad">
-          <Reveal className="max-w-4xl">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#6d52e7]">Process</p>
-            <h2 className="mt-5 text-5xl font-black leading-[0.98] tracking-[-0.05em] sm:text-7xl">
-              Clear process. No confusion. No random guessing.
-            </h2>
-          </Reveal>
-          <div className="mt-14 grid gap-4 lg:grid-cols-4">
-            {process.map((step, index) => (
-              <Reveal key={step.title} delay={index * 0.05}>
-                <div className="min-h-72 rounded-[1.5rem] bg-white p-7 shadow-card">
-                  <span className="grid h-12 w-12 place-items-center rounded-full bg-[#101713] text-sm font-black text-[#d5ff65]">
-                    {index + 1}
-                  </span>
-                  <h3 className="mt-12 text-3xl font-black tracking-[-0.04em]">{step.title}</h3>
-                  <p className="mt-4 text-sm leading-7 text-[#181126]/62">{step.text}</p>
+          <div className="mt-14 grid gap-4 lg:grid-cols-3">
+            {approach.map((item, index) => (
+              <Reveal key={item.title} delay={index * 0.05}>
+                <div className="min-h-80 rounded-[2rem] border border-white/12 bg-white/[0.04] p-8">
+                  <span className="text-7xl font-black tracking-[-0.08em] text-[#d5ff65]">0{index + 1}</span>
+                  <h3 className="mt-12 text-4xl font-black leading-none tracking-[-0.06em]">{item.title}</h3>
+                  <p className="mt-5 text-sm leading-7 text-white/60">{item.text}</p>
                 </div>
               </Reveal>
             ))}
@@ -312,33 +252,77 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="bg-[#d5ff65] py-24 text-[#101713] sm:py-32">
+      <section className="bg-[#745bff] py-24 text-white sm:py-32">
         <div className="container-pad">
-          <div className="grid gap-10 lg:grid-cols-[1fr_0.78fr] lg:items-center">
+          <Reveal className="max-w-5xl">
+            <p className="text-xs font-black uppercase tracking-[0.24em] text-[#d5ff65]">Why DesignstryX</p>
+            <h2 className="mt-5 text-6xl font-black uppercase leading-[0.85] tracking-[-0.08em] sm:text-8xl">
+              Big agency energy, direct creator focus.
+            </h2>
+          </Reveal>
+          <div className="mt-14 grid gap-px overflow-hidden rounded-[2rem] border border-white/20 bg-white/20 lg:grid-cols-4">
+            {stats.map(([value, label]) => (
+              <Reveal key={value}>
+                <div className="bg-[#745bff] p-8">
+                  <p className="text-6xl font-black tracking-[-0.08em] text-[#d5ff65]">{value}</p>
+                  <p className="mt-5 text-sm font-bold uppercase tracking-[0.08em] text-white/70">{label}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="process" className="bg-[#f4f0e6] py-24 text-[#080808] sm:py-32">
+        <div className="container-pad">
+          <Reveal className="max-w-4xl">
+            <p className="text-xs font-black uppercase tracking-[0.24em] text-[#745bff]">Launch process</p>
+            <h2 className="mt-5 text-6xl font-black uppercase leading-[0.85] tracking-[-0.08em] sm:text-8xl">
+              From idea to live link.
+            </h2>
+          </Reveal>
+          <div className="mt-14 grid gap-5 lg:grid-cols-4">
+            {[
+              ["01", "Brief", "References, goals, pages, content needs, target audience."],
+              ["02", "Direction", "Hero concept, visual language, services, CTA structure."],
+              ["03", "Build", "Responsive development, animations, forms, metadata, QA."],
+              ["04", "Launch", "GitHub push, Vercel deploy, domain guidance, final checks."]
+            ].map(([number, title, text]) => (
+              <Reveal key={title}>
+                <div className="rounded-[2rem] border border-[#080808] bg-white p-7 shadow-card">
+                  <p className="text-5xl font-black tracking-[-0.07em] text-[#745bff]">{number}</p>
+                  <h3 className="mt-12 text-3xl font-black tracking-[-0.05em]">{title}</h3>
+                  <p className="mt-4 text-sm leading-7 text-[#080808]/60">{text}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="bg-[#d5ff65] py-24 text-[#080808] sm:py-32">
+        <div className="container-pad">
+          <div className="grid gap-10 lg:grid-cols-[1fr_0.75fr] lg:items-center">
             <Reveal>
-              <p className="text-xs font-black uppercase tracking-[0.2em]">Start a project</p>
-              <h2 className="mt-5 max-w-4xl text-5xl font-black leading-[0.92] tracking-[-0.06em] sm:text-7xl lg:text-8xl">
-                Let&apos;s build something people remember.
+              <p className="text-xs font-black uppercase tracking-[0.24em]">Ready?</p>
+              <h2 className="mt-5 text-6xl font-black uppercase leading-[0.82] tracking-[-0.08em] sm:text-8xl">
+                Let&apos;s make your brand look impossible to ignore.
               </h2>
             </Reveal>
-            <Reveal delay={0.06}>
-              <div className="rounded-[1.5rem] bg-[#101713] p-7 text-white shadow-soft">
+            <Reveal delay={0.05}>
+              <div className="rounded-[2rem] bg-[#080808] p-7 text-white shadow-soft">
                 <div className="space-y-3">
-                  <a href={siteConfig.whatsapp} target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-2xl bg-white/8 px-4 py-4 text-sm font-bold transition hover:bg-white hover:text-[#101713]">
-                    <MessageCircle className="h-5 w-5 text-[#d5ff65]" />
-                    WhatsApp: {siteConfig.phone}
+                  <a href={siteConfig.whatsapp} target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-2xl bg-white/8 px-4 py-4 text-sm font-black transition hover:bg-[#d5ff65] hover:text-[#080808]">
+                    <MessageCircle className="h-5 w-5" />
+                    WhatsApp {siteConfig.phone}
                   </a>
-                  <a href={siteConfig.secondaryPhoneHref} className="flex items-center gap-3 rounded-2xl bg-white/8 px-4 py-4 text-sm font-bold transition hover:bg-white hover:text-[#101713]">
-                    <Phone className="h-5 w-5 text-[#d5ff65]" />
-                    Call: {siteConfig.secondaryPhone}
+                  <a href={siteConfig.secondaryPhoneHref} className="flex items-center gap-3 rounded-2xl bg-white/8 px-4 py-4 text-sm font-black transition hover:bg-[#d5ff65] hover:text-[#080808]">
+                    <Phone className="h-5 w-5" />
+                    Call {siteConfig.secondaryPhone}
                   </a>
-                  <a href={siteConfig.emailHref} className="flex items-center gap-3 rounded-2xl bg-white/8 px-4 py-4 text-sm font-bold transition hover:bg-white hover:text-[#101713]">
-                    <Mail className="h-5 w-5 text-[#d5ff65]" />
+                  <a href={siteConfig.emailHref} className="flex items-center gap-3 rounded-2xl bg-white/8 px-4 py-4 text-sm font-black transition hover:bg-[#d5ff65] hover:text-[#080808]">
+                    <Mail className="h-5 w-5" />
                     {siteConfig.email}
-                  </a>
-                  <a href={siteConfig.secondaryEmailHref} className="flex items-center gap-3 rounded-2xl bg-white/8 px-4 py-4 text-sm font-bold transition hover:bg-white hover:text-[#101713]">
-                    <PenTool className="h-5 w-5 text-[#d5ff65]" />
-                    {siteConfig.secondaryEmail}
                   </a>
                 </div>
               </div>
@@ -347,12 +331,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-white py-24 text-[#101713] sm:py-32">
-        <div className="container-pad grid gap-12 lg:grid-cols-[0.75fr_1.25fr]">
+      <section className="bg-white py-24 text-[#080808] sm:py-32">
+        <div className="container-pad grid gap-12 lg:grid-cols-[0.78fr_1.22fr]">
           <Reveal>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#6d52e7]">FAQ</p>
-            <h2 className="mt-5 text-5xl font-black leading-[0.98] tracking-[-0.05em]">
-              Before we start.
+            <p className="text-xs font-black uppercase tracking-[0.24em] text-[#745bff]">FAQ</p>
+            <h2 className="mt-5 text-6xl font-black uppercase leading-[0.85] tracking-[-0.08em]">
+              Quick answers.
             </h2>
           </Reveal>
           <Reveal delay={0.05}>
