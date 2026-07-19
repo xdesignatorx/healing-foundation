@@ -31,14 +31,14 @@ export function Header() {
               : "bg-transparent"
           }`}
         >
-          <Link href="/" className="flex min-w-0 items-center gap-3">
-            <span className="relative grid h-12 w-12 shrink-0 place-items-center overflow-hidden rounded-xl bg-[#ff7a00] shadow-[0_0_30px_rgba(255,112,0,0.28)]">
+          <Link href="/" className="flex min-w-0 items-center gap-4">
+            <span className="relative grid h-16 w-16 shrink-0 place-items-center overflow-hidden rounded-xl border border-white/10 bg-white/5 shadow-[0_0_34px_rgba(255,178,72,0.18)] backdrop-blur">
               <Image
                 src={siteConfig.logo}
                 alt={`${siteConfig.name} logo`}
                 fill
-                sizes="48px"
-                className="object-contain p-1"
+                sizes="64px"
+                className="object-contain p-0.5"
                 priority
               />
             </span>
