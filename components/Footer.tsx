@@ -21,18 +21,18 @@ export function Footer() {
               </span>
               <span>
                 <span className="block text-xl font-bold leading-none">{siteConfig.name}</span>
-                <span className="mt-1 block text-[0.62rem] font-bold uppercase text-[#d5c9ff]">Wellness residence</span>
+                <span className="mt-1 block text-[0.62rem] font-bold uppercase text-[#d5c9ff]">Creative studio</span>
               </span>
             </Link>
             <h2 className="mt-9 max-w-xl text-4xl font-semibold leading-[1.06] text-balance sm:text-5xl">
-              A clearer path can begin with one private conversation.
+              Your next digital launch can begin with one sharp conversation.
             </h2>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/contact"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-[#f1c765] px-5 text-sm font-bold text-[#2f291c] transition hover:-translate-y-0.5 hover:bg-[#f6d777]"
               >
-                Start private enquiry
+                Start a project
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <a
@@ -40,7 +40,7 @@ export function Footer() {
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-white/18 px-5 text-sm font-bold text-white transition hover:bg-white hover:text-forest"
               >
                 <Phone className="h-4 w-4" />
-                Call admissions
+                Call DesignstryX
               </a>
             </div>
           </div>
@@ -80,7 +80,7 @@ export function Footer() {
 
         <div className="flex flex-col gap-2 pt-6 text-xs text-white/38 sm:flex-row sm:items-center sm:justify-between">
           <p>Copyright {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
-          <p>Confidential rehabilitation and wellness support.</p>
+          <p>Design, development, branding, and digital launch support.</p>
         </div>
       </div>
     </footer>

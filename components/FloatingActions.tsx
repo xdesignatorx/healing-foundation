@@ -16,7 +16,7 @@ export function FloatingActions() {
       <a
         href={siteConfig.phoneHref}
         className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-forest text-white shadow-soft transition hover:scale-105"
-        aria-label="Call Healing Foundation"
+        aria-label="Call DesignstryX"
       >
         <Phone size={21} />
       </a>

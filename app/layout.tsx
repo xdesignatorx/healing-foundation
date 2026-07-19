@@ -10,14 +10,14 @@ import { ServiceWorkerRegister } from "@/components/ServiceWorkerRegister";
 import { StructuredData } from "@/components/StructuredData";
 import { siteConfig } from "@/data/site";
 
-const siteTemporarilyHidden = true;
+const siteTemporarilyHidden = false;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: siteTemporarilyHidden
       ? `${siteConfig.name} | Temporarily Unavailable`
-      : `${siteConfig.name} | Premium Rehabilitation & Wellness Centre`,
+      : `${siteConfig.name} | Design & Development Agency`,
     template: `%s | ${siteConfig.name}`
   },
   description: siteTemporarilyHidden
@@ -29,11 +29,12 @@ export const metadata: Metadata = {
     "contact:email": siteConfig.email
   },
   keywords: [
-    "rehab centre",
-    "addiction treatment",
-    "mental wellness",
-    "luxury rehabilitation",
-    "residential recovery centre"
+    "DesignstryX",
+    "website design agency",
+    "web development agency",
+    "UI UX design",
+    "branding agency",
+    "Next.js developer"
   ],
   openGraph: {
     title: siteConfig.name,

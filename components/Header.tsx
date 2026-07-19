@@ -44,7 +44,7 @@ export function Header() {
                 {siteConfig.name}
               </span>
               <span className="mt-1 block truncate text-[0.58rem] font-bold uppercase text-[#7057d9]">
-                Wellness residence
+                Creative studio
               </span>
             </span>
           </Link>
@@ -115,8 +115,8 @@ export function Header() {
           <div className="hidden items-center gap-2 xl:flex">
             <a
               href={siteConfig.phoneHref}
-              aria-label="Call admissions"
-              title="Call admissions"
+              aria-label="Call DesignstryX"
+              title="Call DesignstryX"
               className="grid h-10 w-10 place-items-center rounded-full border border-forest/12 text-forest transition hover:border-[#7057d9] hover:bg-[#f0eaff] hover:text-[#7057d9]"
             >
               <Phone className="h-4 w-4" />
@@ -125,7 +125,7 @@ export function Header() {
               href="/contact"
               className="inline-flex h-10 items-center rounded-md bg-[#7057d9] px-4 text-xs font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#5e46c7]"
             >
-              Confidential enquiry
+              Start project
             </Link>
           </div>
 
@@ -194,7 +194,7 @@ export function Header() {
             <div className="mt-3 grid grid-cols-[auto_1fr] gap-2 border-t border-forest/8 pt-3">
               <a
                 href={siteConfig.phoneHref}
-                aria-label="Call admissions"
+                aria-label="Call DesignstryX"
                 className="grid h-11 w-11 place-items-center rounded-md border border-forest/12 text-forest"
               >
                 <Phone className="h-4 w-4" />
@@ -204,7 +204,7 @@ export function Header() {
                 onClick={() => setOpen(false)}
                 className="inline-flex h-11 items-center justify-center rounded-md bg-[#7057d9] px-4 text-sm font-bold text-white"
               >
-                Confidential enquiry
+                Start project
               </Link>
             </div>
           </div>

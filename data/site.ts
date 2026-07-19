@@ -1,429 +1,294 @@
 import {
   BadgeCheck,
-  BedDouble,
-  Brain,
-  Cigarette,
-  Dumbbell,
-  HeartHandshake,
-  Home,
-  Leaf,
-  Moon,
-  Salad,
-  ShieldCheck,
+  Brush,
+  Code2,
+  Globe2,
+  LayoutDashboard,
+  Megaphone,
+  Palette,
+  PenTool,
+  Play,
+  Rocket,
+  ShoppingBag,
   Sparkles,
-  Stethoscope,
-  Users,
-  Wind
+  Wand2
 } from "lucide-react";
 
 export const siteConfig = {
-  name: "Healing Foundation",
-  tagline: "Private rehabilitation, compassionate recovery, refined care.",
+  name: "DesignstryX",
+  tagline: "Design, development, and digital launch studio.",
   description:
-    "A premium residential rehabilitation and wellness centre offering addiction recovery, mental health support, family care, and holistic healing in a calm, private setting.",
-  url: "https://www.healingfoundationrehab.in",
+    "DesignstryX is a Udyam-registered design and development agency creating premium websites, UI/UX, brand identity, marketing creatives, and launch-ready digital experiences.",
+  url: "https://healing-foundation.vercel.app",
   logo: "/images/brand/healing-foundation-logo.png",
-  ogImage: "/images/centre/front-sign.jpeg",
-  phone: "+91 78768 27691",
-  secondaryPhone: "+91 98160 98191",
-  phoneNumbers: ["+91 78768 27691", "+91 98160 98191"],
-  phoneHref: "tel:+917876827691",
-  secondaryPhoneHref: "tel:+919816098191",
-  whatsapp: "https://wa.me/917876827691",
-  email: "healingfoundation9@gmail.com",
-  emailHref: "mailto:healingfoundation9@gmail.com",
-  address: "Mehta Market, Opp. Tata Motors, Kumarhatti, Solan, H.P.",
-  hours: "Admissions support available 24/7"
+  ogImage: "/images/centre/ethos-team.png",
+  phone: "+91 98169 44777",
+  secondaryPhone: "+91 98160 07464",
+  phoneNumbers: ["+91 98169 44777", "+91 98160 07464"],
+  phoneHref: "tel:+919816944777",
+  secondaryPhoneHref: "tel:+919816007464",
+  whatsapp: "https://wa.me/919816944777",
+  email: "Designstryx@gmail.com",
+  secondaryEmail: "nmhrkbharatsharma@gmail.com",
+  emailHref: "mailto:Designstryx@gmail.com",
+  secondaryEmailHref: "mailto:nmhrkbharatsharma@gmail.com",
+  address: "India-based creative studio. Remote projects accepted.",
+  hours: "Project enquiries open all week",
+  registration: "Udyam registered business"
 };
 
 export const navItems = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Treatments", href: "/treatments" },
-  { label: "Facilities", href: "/facilities" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" }
+  { label: "Services", href: "/#services" },
+  { label: "Work", href: "/#work" },
+  { label: "Process", href: "/#process" },
+  { label: "Contact", href: "/#contact" }
 ];
 
 export const hero = {
-  eyebrow: "Premium Recovery Residence",
-  title: "Discreet, dignified rehabilitation in a restorative wellness setting.",
+  eyebrow: "Creative Technology Studio",
+  title: "Premium design and development for ambitious digital brands.",
   copy:
-    "Healing Foundation blends evidence-informed clinical care with serene living, personalized therapy, and family-inclusive recovery planning.",
-  image: "/images/centre/exterior-night-wide.jpeg",
+    "DesignstryX creates websites, product interfaces, brand systems, and marketing creatives with a polished, modern launch experience.",
+  image: "/images/centre/ethos-team.png",
   stats: [
-    { value: "24/7", label: "clinical support" },
-    { value: "1:1", label: "care planning" },
-    { value: "Private", label: "residential setting" }
+    { value: "UI/UX", label: "design systems" },
+    { value: "Next.js", label: "web builds" },
+    { value: "Vercel", label: "deployment" }
   ]
 };
 
 export const trustPoints = [
   {
-    icon: ShieldCheck,
-    title: "Confidential Admissions",
-    text: "Every enquiry is handled with discretion, clarity, and respect for the family journey."
-  },
-  {
     icon: BadgeCheck,
-    title: "Structured Care",
-    text: "Recovery plans combine therapy, routine, wellness practices, and relapse-prevention work."
+    title: "Udyam Registered",
+    text: "DesignstryX is registered on the Udyam portal for professional business identity."
   },
   {
-    icon: HeartHandshake,
-    title: "Family Guidance",
-    text: "Families receive education and support so healing can continue beyond the centre."
+    icon: Rocket,
+    title: "Launch Focused",
+    text: "Every project is planned around speed, clarity, conversion, and deployment readiness."
+  },
+  {
+    icon: Sparkles,
+    title: "Premium Finish",
+    text: "Elegant typography, smooth motion, responsive layouts, and modern visual systems."
   }
 ];
 
 export const treatments = [
   {
-    slug: "alcohol-dependence",
-    title: "Alcohol Dependence Recovery",
-    summary:
-      "Medically guided support, counseling, habit restructuring, and relapse-prevention planning.",
-    icon: Leaf
+    slug: "website-design",
+    title: "Website Design",
+    summary: "Premium websites, landing pages, portfolio pages, and conversion-focused visual systems.",
+    icon: Globe2
   },
   {
-    slug: "substance-use",
-    title: "Substance Use Treatment",
-    summary:
-      "Personalized recovery pathways for drug dependence with therapeutic and wellness support.",
-    icon: ShieldCheck
+    slug: "web-development",
+    title: "Web Development",
+    summary: "Next.js, React, Tailwind CSS, Framer Motion, SEO metadata, forms, and Vercel deployment.",
+    icon: Code2
   },
   {
-    slug: "dual-diagnosis",
-    title: "Dual Diagnosis Care",
-    summary:
-      "Integrated support for addiction alongside anxiety, depression, trauma, or mood concerns.",
-    icon: Brain
+    slug: "product-ui",
+    title: "Product & App UI",
+    summary: "Dashboards, SaaS screens, mobile app UI, design systems, and interactive prototypes.",
+    icon: LayoutDashboard
   },
   {
-    slug: "family-therapy",
-    title: "Family Therapy",
-    summary:
-      "Guided conversations and education to rebuild trust, boundaries, and communication.",
-    icon: Users
+    slug: "brand-identity",
+    title: "Brand Identity",
+    summary: "Logo direction, typography, color systems, brand kits, and social identity assets.",
+    icon: Palette
   },
   {
-    slug: "aftercare",
-    title: "Aftercare Planning",
-    summary:
-      "A practical continuity plan designed for life after residential care.",
-    icon: HeartHandshake
+    slug: "marketing-creatives",
+    title: "Marketing Creatives",
+    summary: "Ad creatives, campaign graphics, launch assets, banners, thumbnails, and posters.",
+    icon: Megaphone
   },
   {
-    slug: "wellness-restoration",
-    title: "Wellness Restoration",
-    summary:
-      "Yoga, mindful movement, nutrition, rest, and daily rhythm to support whole-person healing.",
-    icon: Sparkles
+    slug: "graphic-design",
+    title: "Graphic Design",
+    summary: "Brochures, presentation decks, business creatives, print-ready and digital assets.",
+    icon: Brush
   },
   {
-    slug: "nicotine-dependence",
-    title: "Nicotine & Habit Recovery",
-    summary:
-      "Supportive counseling and routine-building for residents working through nicotine dependence and compulsive habits.",
-    icon: Cigarette
+    slug: "no-code",
+    title: "No-Code Builds",
+    summary: "Fast MVP pages, automation-ready forms, business tools, and content-driven microsites.",
+    icon: Wand2
   },
   {
-    slug: "stress-burnout",
-    title: "Stress & Burnout Care",
-    summary:
-      "A calm residential reset focused on rest, emotional regulation, guided therapy, and healthy daily structure.",
-    icon: Moon
+    slug: "motion-video",
+    title: "Motion & Video Assets",
+    summary: "UI motion, animated web sections, product reels, and lightweight launch videos.",
+    icon: Play
   },
   {
-    slug: "mindfulness-therapy",
-    title: "Mindfulness-Based Therapy",
-    summary:
-      "Breathwork, reflective practices, and therapist-guided emotional awareness to support steadier recovery.",
-    icon: Wind
+    slug: "ecommerce",
+    title: "Ecommerce Stores",
+    summary: "Product pages, storefront UI, offer landing pages, and conversion-ready shopping experiences.",
+    icon: ShoppingBag
   }
 ];
 
 export const facilities = [
   {
-    title: "Private Residential Suites",
-    text: "Calm rooms designed for rest, privacy, and uninterrupted recovery.",
-    image: "/images/centre/shared-room.jpeg"
-  },
-  {
-    title: "Therapy & Consultation Rooms",
-    text: "Quiet clinical spaces for individual therapy, psychiatric reviews, and family sessions.",
-    image: "/images/centre/counselling-room.jpeg"
-  },
-  {
-    title: "Group Therapy Hall",
-    text: "Open session areas for psychoeducation, guided discussion, and peer-supported recovery work.",
-    image: "/images/centre/group-therapy-session.jpeg"
-  },
-  {
-    title: "Reception & Common Areas",
-    text: "Clean, welcoming spaces for admissions, coordination, reading, and daily routine.",
-    image: "/images/centre/reception-lounge.jpeg"
-  },
-  {
-    title: "Consultation Office",
-    text: "Private office spaces for reviews, care planning, family conversations, and documentation.",
+    title: "Strategy Sprint",
+    text: "Offer positioning, page flow, audience clarity, and conversion goals before design begins.",
     image: "/images/centre/consultation-office.jpeg"
   },
   {
-    title: "Movement & Fitness Zone",
-    text: "Gentle fitness, walking routines, and guided movement to rebuild energy and confidence.",
-    image: "/images/centre/wellness-yoga-hall.jpeg"
+    title: "Premium UI System",
+    text: "Typography, spacing, colors, reusable sections, and responsive layouts for a consistent brand.",
+    image: "/images/centre/ethos-team.png"
+  },
+  {
+    title: "Deployment Setup",
+    text: "Vercel hosting, forms, metadata, performance checks, and domain guidance.",
+    image: "/images/centre/team-office-landscape.jpeg"
+  },
+  {
+    title: "Creative Production",
+    text: "Social creatives, launch assets, banners, decks, and campaign visuals for marketing.",
+    image: "/images/centre/awareness-session.jpeg"
+  },
+  {
+    title: "Frontend Build",
+    text: "Clean Next.js and Tailwind implementation with responsive UI and smooth interactions.",
+    image: "/images/centre/counselling-room.jpeg"
+  },
+  {
+    title: "Growth Support",
+    text: "Ongoing updates, polish, new sections, SEO basics, and conversion improvements.",
+    image: "/images/centre/reception-lounge.jpeg"
   }
 ];
 
 export const megaMenu = {
-  treatments: [
-    {
-      label: "Alcohol Recovery",
-      href: "/treatments",
-      description: "Structured care for alcohol dependence and relapse prevention.",
-      icon: Leaf
-    },
-    {
-      label: "Drug De-Addiction",
-      href: "/treatments",
-      description: "Residential support for substance use recovery.",
-      icon: ShieldCheck
-    },
-    {
-      label: "Dual Diagnosis",
-      href: "/treatments",
-      description: "Integrated care for addiction with anxiety, depression, or trauma concerns.",
-      icon: Brain
-    },
-    {
-      label: "Family Therapy",
-      href: "/treatments",
-      description: "Guided family support, communication, and recovery education.",
-      icon: Users
-    },
-    {
-      label: "Aftercare Planning",
-      href: "/treatments",
-      description: "A continuity plan for life after residential treatment.",
-      icon: HeartHandshake
-    },
-    {
-      label: "Wellness Therapies",
-      href: "/treatments",
-      description: "Mindfulness, yoga, nutrition, and restorative daily rhythm.",
-      icon: Sparkles
-    }
-  ],
-  facilities: [
-    {
-      label: "Private Rooms",
-      href: "/facilities",
-      description: "Comfortable residential suites for quiet recovery.",
-      icon: BedDouble
-    },
-    {
-      label: "Clinical Spaces",
-      href: "/facilities",
-      description: "Therapy rooms designed for privacy and emotional safety.",
-      icon: Stethoscope
-    },
-    {
-      label: "Wellness Residence",
-      href: "/facilities",
-      description: "Calm gardens, mindful corners, and nature-led spaces.",
-      icon: Home
-    },
-    {
-      label: "Nutrition Support",
-      href: "/facilities",
-      description: "Balanced meals for physical restoration and routine.",
-      icon: Salad
-    },
-    {
-      label: "Fitness & Movement",
-      href: "/facilities",
-      description: "Gentle movement, breathwork, and healthy activity.",
-      icon: Dumbbell
-    },
-    {
-      label: "24/7 Support",
-      href: "/contact",
-      description: "Admissions support and guidance for families.",
-      icon: ShieldCheck
-    }
-  ]
+  treatments: treatments.slice(0, 6).map((item) => ({
+    label: item.title,
+    href: "/#services",
+    description: item.summary,
+    icon: item.icon
+  })),
+  facilities: facilities.slice(0, 6).map((item, index) => ({
+    label: item.title,
+    href: index < 3 ? "/#work" : "/#process",
+    description: item.text,
+    icon: [PenTool, LayoutDashboard, Rocket, Brush, Code2, Sparkles][index]
+  }))
 };
 
 export const gallery = [
-  {
-    title: "Healing Foundation Residence",
-    image: "/images/centre/front-sign.jpeg"
-  },
-  {
-    title: "Residential Building",
-    image: "/images/centre/exterior-day-team.jpeg"
-  },
-  {
-    title: "Night View",
-    image: "/images/centre/exterior-night-wide.jpeg"
-  },
-  {
-    title: "Reception Lounge",
-    image: "/images/centre/reception-lounge.jpeg"
-  },
-  {
-    title: "Residential Dormitory",
-    image: "/images/centre/residential-dorm.jpeg"
-  },
-  {
-    title: "Shared Room",
-    image: "/images/centre/shared-room.jpeg"
-  },
-  {
-    title: "Counselling Room",
-    image: "/images/centre/counselling-room.jpeg"
-  },
-  {
-    title: "Consultation Office",
-    image: "/images/centre/consultation-office.jpeg"
-  },
-  {
-    title: "Group Therapy Session",
-    image: "/images/centre/group-therapy-session.jpeg"
-  },
-  {
-    title: "Wellness & Yoga Hall",
-    image: "/images/centre/wellness-yoga-hall.jpeg"
-  },
-  {
-    title: "Awareness Session",
-    image: "/images/centre/awareness-session.jpeg"
-  },
-  {
-    title: "Outdoor Activity",
-    image: "/images/centre/outdoor-activity.jpeg"
-  },
-  {
-    title: "Community Celebration",
-    image: "/images/centre/community-celebration.jpeg"
-  },
-  {
-    title: "Recovery Education",
-    image: "/images/centre/recovery-stages-poster.jpeg"
-  },
-  {
-    title: "Stair Lobby",
-    image: "/images/centre/stair-lobby.jpeg"
-  },
-  {
-    title: "Care Team",
-    image: "/images/centre/team-office-landscape.jpeg"
-  }
+  { title: "Website Design", image: "/images/centre/ethos-team.png" },
+  { title: "UI Planning", image: "/images/centre/consultation-office.jpeg" },
+  { title: "Creative Workshop", image: "/images/centre/awareness-session.jpeg" },
+  { title: "Team Collaboration", image: "/images/centre/team-office-landscape.jpeg" },
+  { title: "Frontend Build", image: "/images/centre/counselling-room.jpeg" },
+  { title: "Launch Review", image: "/images/centre/reception-lounge.jpeg" }
 ];
 
 export const testimonials = [
   {
     quote:
-      "The team treated our family with dignity from the first call. The process felt calm, private, and deeply human.",
-    name: "Family member",
-    role: "Alcohol recovery program"
+      "DesignstryX turns rough ideas into polished digital experiences that feel premium from the first screen.",
+    name: "Founder",
+    role: "Website design project"
   },
   {
     quote:
-      "The structure helped me feel safe again. Therapy, routine, and the environment all worked together.",
-    name: "Former resident",
-    role: "Residential care"
+      "The process is clear, fast, and practical. Design, build, and launch are handled without confusion.",
+    name: "Business owner",
+    role: "Landing page launch"
   },
   {
     quote:
-      "We finally understood how to support recovery at home. The family sessions were transformative.",
-    name: "Parent",
-    role: "Family support"
+      "A strong eye for modern UI, spacing, and responsive design. The final site felt sharp and trustworthy.",
+    name: "Startup client",
+    role: "Product UI support"
   }
 ];
 
 export const faqs = [
   {
-    question: "Is the admission process confidential?",
+    question: "What services does DesignstryX provide?",
     answer:
-      "Yes. Enquiries, assessments, and admissions are handled privately by a trained care coordinator."
+      "DesignstryX provides website design, web development, UI/UX, brand identity, graphic design, marketing creatives, motion assets, ecommerce pages, and no-code style business tools."
   },
   {
-    question: "Can families speak with the care team?",
+    question: "Can you build the full site and make it live?",
     answer:
-      "Yes. Family involvement is encouraged where clinically appropriate, with clear boundaries and scheduled updates."
+      "Yes. DesignstryX can plan, design, develop, test, deploy on Vercel, and guide domain setup for a complete website launch."
   },
   {
-    question: "Do you provide detox?",
+    question: "Is DesignstryX registered?",
     answer:
-      "Detox needs are assessed before admission. Where medical detox is required, the team will guide the safest next step."
+      "Yes. DesignstryX is registered on the Udyam portal. The certificate can be added to the website later as a trust document."
   },
   {
-    question: "How long does treatment take?",
+    question: "How can I start a project?",
     answer:
-      "Length of stay depends on the person's needs, clinical assessment, and recovery goals. A care plan is discussed before admission."
+      "Call, WhatsApp, or email with your business type, target audience, services, reference links, and deadline."
   }
 ];
 
 export const blogPosts = [
   {
-    slug: "choosing-private-rehab-centre",
-    title: "How to Choose a Private Rehab Centre With Confidence",
-    excerpt:
-      "A practical guide to evaluating care quality, privacy, family support, and aftercare planning.",
-    date: "2026-01-12",
+    slug: "premium-website-checklist",
+    title: "What Makes a Website Feel Premium?",
+    excerpt: "A practical checklist covering typography, spacing, motion, trust, content, and conversion design.",
+    date: "2026-07-19",
+    image: "/images/centre/ethos-team.png"
+  },
+  {
+    slug: "landing-page-that-converts",
+    title: "How to Plan a Landing Page That Converts",
+    excerpt: "Offer clarity, sections, social proof, CTA placement, and page rhythm for stronger leads.",
+    date: "2026-07-19",
     image: "/images/centre/consultation-office.jpeg"
   },
   {
-    slug: "family-role-in-recovery",
-    title: "The Role of Family in Sustainable Recovery",
-    excerpt:
-      "Why education, boundaries, and compassionate communication matter during and after treatment.",
-    date: "2026-02-03",
-    image: "/images/centre/group-therapy-session.jpeg"
-  },
-  {
-    slug: "routine-and-wellness",
-    title: "Why Daily Routine Supports Addiction Recovery",
-    excerpt:
-      "Sleep, nutrition, therapy, movement, and reflection can create stability during early recovery.",
-    date: "2026-03-18",
-    image: "/images/centre/wellness-yoga-hall.jpeg"
+    slug: "why-vercel-for-business-sites",
+    title: "Why Vercel Works Well for Modern Business Websites",
+    excerpt: "Fast deployments, stable previews, clean hosting, and simple workflows for professional web projects.",
+    date: "2026-07-19",
+    image: "/images/centre/team-office-landscape.jpeg"
   }
 ];
 
 export const processSteps = [
   {
-    title: "Private enquiry",
-    text: "Speak with an admissions coordinator and share the situation in confidence."
+    title: "Discovery",
+    text: "Understand your business, audience, offer, competitors, references, and launch goal."
   },
   {
-    title: "Clinical assessment",
-    text: "The care team reviews needs, safety considerations, goals, and suitable treatment options."
+    title: "Design Direction",
+    text: "Shape the visual system, page flow, hero concept, CTA strategy, and responsive structure."
   },
   {
-    title: "Residential care",
-    text: "A structured daily program begins with therapy, wellness practices, and progress reviews."
+    title: "Development",
+    text: "Build the website with clean components, smooth motion, SEO metadata, and fast performance."
   },
   {
-    title: "Aftercare pathway",
-    text: "Before discharge, residents receive a realistic recovery plan for home and community life."
+    title: "Launch & Support",
+    text: "Deploy on Vercel, test the live site, guide domain setup, and support post-launch changes."
   }
 ];
 
 export const values = [
-  "Discretion",
-  "Clinical clarity",
-  "Human warmth",
-  "Restorative environment",
-  "Family inclusion",
-  "Long-term recovery"
+  "Premium design",
+  "Fast delivery",
+  "Clean development",
+  "Responsive UI",
+  "Conversion clarity",
+  "Launch support"
 ];
 
 export const inclusions = [
-  { icon: BedDouble, title: "Residential comfort" },
-  { icon: Brain, title: "Therapeutic depth" },
-  { icon: Leaf, title: "Holistic wellness" },
-  { icon: Users, title: "Family support" }
+  { icon: Globe2, title: "Website design" },
+  { icon: Code2, title: "Frontend development" },
+  { icon: Palette, title: "Brand identity" },
+  { icon: Megaphone, title: "Marketing creatives" }
 ];
