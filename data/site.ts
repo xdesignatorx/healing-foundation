@@ -32,17 +32,18 @@ export const siteConfig = {
   secondaryEmail: "nmhrkbharatsharma@gmail.com",
   emailHref: "mailto:Designstryx@gmail.com",
   secondaryEmailHref: "mailto:nmhrkbharatsharma@gmail.com",
-  address: "India-based creative studio. Remote projects accepted.",
+  address: "Solan, Himachal Pradesh, India",
   hours: "Project enquiries open all week",
   registration: "Udyam registered business"
 };
 
 export const navItems = [
   { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
-  { label: "Work", href: "/#work" },
-  { label: "Process", href: "/#process" },
-  { label: "Contact", href: "/#contact" }
+  { label: "Process", href: "/process" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" }
 ];
 
 export const hero = {

@@ -3,6 +3,7 @@ const CORE_ASSETS = [
   "/",
   "/about",
   "/services",
+  "/process",
   "/gallery",
   "/blog",
   "/contact",

@@ -1,15 +1,42 @@
-import { ExternalLink, Mail, MapPin, Navigation, Phone } from "lucide-react";
-import { BeforeYouVisit } from "@/components/BeforeYouVisit";
-import { EnquiryForm } from "@/components/EnquiryForm";
-import { PageHero } from "@/components/PageHero";
+import type { Metadata } from "next";
+import { ExternalLink, Mail, MapPin, MessageCircle, Navigation, Phone, Sparkles } from "lucide-react";
+import { ProjectBriefForm } from "@/components/ProjectBriefForm";
 import { Reveal } from "@/components/Motion";
-import { SectionHeading } from "@/components/SectionHeading";
 import { siteConfig } from "@/data/site";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact Healing Foundation for confidential rehabilitation admissions support."
+  description:
+    "Contact DesignstryX for website design, web development, branding, UI/UX, marketing creatives, and launch-ready digital projects."
 };
+
+const contactCards = [
+  {
+    label: "WhatsApp",
+    value: siteConfig.phone,
+    href: siteConfig.whatsapp,
+    icon: MessageCircle,
+    external: true
+  },
+  {
+    label: "Primary call",
+    value: siteConfig.phone,
+    href: siteConfig.phoneHref,
+    icon: Phone
+  },
+  {
+    label: "Secondary call",
+    value: siteConfig.secondaryPhone,
+    href: siteConfig.secondaryPhoneHref,
+    icon: Phone
+  },
+  {
+    label: "Email",
+    value: siteConfig.email,
+    href: siteConfig.emailHref,
+    icon: Mail
+  }
+];
 
 export default function ContactPage() {
   const mapQuery = encodeURIComponent(siteConfig.address);
@@ -18,114 +45,122 @@ export default function ContactPage() {
 
   return (
     <>
-      <PageHero
-        eyebrow="Contact"
-        title="A private conversation can be the beginning of recovery."
-        copy="Reach out for confidential admissions guidance, family consultation, or program suitability questions."
-        image="/images/centre/awareness-session.jpeg"
-      />
-      <section className="container-pad grid gap-10 py-20 lg:grid-cols-[0.85fr_1.15fr]">
-        <Reveal>
-          <SectionHeading
-            eyebrow="Admissions"
-            title="Speak with a care coordinator."
-            copy="You can call, WhatsApp, email, or use the enquiry form. Share only what feels comfortable for the first conversation."
-          />
-          <div className="mt-8 grid gap-4">
-            <a href={siteConfig.phoneHref} className="flex items-center gap-4 rounded-lg border border-forest/10 bg-white/70 p-5 transition hover:border-gold">
-              <Phone className="h-6 w-6 text-gold" />
-              <span>
-                <span className="block text-sm text-forest/60">Primary call</span>
-                <span className="font-semibold text-forest">{siteConfig.phone}</span>
-              </span>
-            </a>
-            <a href={siteConfig.secondaryPhoneHref} className="flex items-center gap-4 rounded-lg border border-forest/10 bg-white/70 p-5 transition hover:border-gold">
-              <Phone className="h-6 w-6 text-gold" />
-              <span>
-                <span className="block text-sm text-forest/60">Secondary call</span>
-                <span className="font-semibold text-forest">{siteConfig.secondaryPhone}</span>
-              </span>
-            </a>
-            <a href={siteConfig.emailHref} className="flex items-center gap-4 rounded-lg border border-forest/10 bg-white/70 p-5 transition hover:border-gold">
-              <Mail className="h-6 w-6 text-gold" />
-              <span>
-                <span className="block text-sm text-forest/60">Email</span>
-                <span className="font-semibold text-forest">{siteConfig.email}</span>
-              </span>
-            </a>
-            <div className="flex items-center gap-4 rounded-lg border border-forest/10 bg-white/70 p-5">
-              <MapPin className="h-6 w-6 text-gold" />
-              <span>
-                <span className="block text-sm text-forest/60">Address</span>
-                <span className="font-semibold text-forest">{siteConfig.address}</span>
-              </span>
-            </div>
-          </div>
-        </Reveal>
-        <Reveal>
-          <EnquiryForm />
-        </Reveal>
-      </section>
-      <section className="container-pad pb-20">
-        <Reveal className="overflow-hidden rounded-[2rem] border border-forest/10 bg-white shadow-soft">
-          <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
-            <div className="bg-forest p-8 text-pearl md:p-10">
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-gold text-ink">
-                <MapPin className="h-6 w-6" />
+      <section className="relative overflow-hidden bg-[#05060d] pt-36 text-white">
+        <div className="network-grid absolute inset-0 opacity-70" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_35%_18%,rgba(255,122,0,0.20),transparent_30%),radial-gradient(circle_at_80%_22%,rgba(13,101,255,0.22),transparent_32%),linear-gradient(180deg,rgba(5,6,13,0.12)_0%,#05060d_88%)]" />
+        <div className="container-pad relative pb-20 pt-10 sm:pb-28">
+          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+            <Reveal>
+              <div className="mb-8 inline-flex items-center gap-3 rounded-md border border-[#0d65ff]/35 bg-[#0d65ff]/10 px-5 py-3 font-mono text-sm text-[#0d65ff]">
+                CONTACT&gt; Start signal received...
               </div>
-              <p className="eyebrow mt-7 text-sand">Find Healing Foundation</p>
-              <h2 className="mt-3 font-serif text-4xl font-semibold leading-tight md:text-5xl">
-                Reach the centre with confidence.
-              </h2>
-              <p className="mt-5 text-sm leading-7 text-pearl/72">
-                Use the interactive map for directions to the centre. For a smoother visit, call the admissions team before arriving.
+              <h1 className="text-[4rem] font-black leading-[0.92] tracking-[-0.075em] sm:text-[6.4rem]">
+                Let us build your next
+                <span className="block bg-gradient-to-r from-[#ff7a00] via-[#d3a17d] to-[#0d65ff] bg-clip-text text-transparent">
+                  digital advantage.
+                </span>
+              </h1>
+              <p className="mt-8 max-w-2xl text-lg leading-8 text-white/58">
+                Send your idea, reference site, deadline, and business goal. DesignstryX will help turn it into a premium web, brand, or creative project.
               </p>
-              <div className="mt-8 rounded-2xl border border-pearl/15 bg-pearl/10 p-5 backdrop-blur">
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-sand">Address</p>
-                <p className="mt-3 text-base font-semibold leading-7 text-pearl">{siteConfig.address}</p>
+            </Reveal>
+
+            <Reveal delay={0.06}>
+              <div className="rounded-3xl border border-white/10 bg-[#0d0f1b] p-5 sm:p-7">
+                <p className="font-mono text-xs font-bold uppercase tracking-[0.22em] text-[#00f0a8]">Direct channels</p>
+                <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {contactCards.map((card) => {
+                    const Icon = card.icon;
+
+                    return (
+                      <a
+                        key={card.label}
+                        href={card.href}
+                        target={card.external ? "_blank" : undefined}
+                        rel={card.external ? "noreferrer" : undefined}
+                        className="group rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition hover:-translate-y-1 hover:border-[#ff7a00]/45 hover:bg-white/[0.07]"
+                      >
+                        <Icon className="h-6 w-6 text-[#ff7a00]" />
+                        <p className="mt-7 text-xs font-bold uppercase tracking-[0.18em] text-white/36">{card.label}</p>
+                        <p className="mt-2 break-all text-base font-black text-white">{card.value}</p>
+                      </a>
+                    );
+                  })}
+                </div>
               </div>
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#05060d] py-24 text-white sm:py-32">
+        <div className="container-pad grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          <Reveal>
+            <div className="sticky top-28">
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.24em] text-[#ff7a00]">Project brief</p>
+              <h2 className="mt-5 text-5xl font-black leading-[0.96] tracking-[-0.06em] sm:text-7xl">
+                The fastest way to start is a clear brief.
+              </h2>
+              <p className="mt-6 max-w-xl text-base leading-8 text-white/54">
+                Share what you want to build, what it should achieve, and a few references. We will reply with the next practical step.
+              </p>
+              <div className="mt-8 rounded-2xl border border-[#00f0a8]/15 bg-[#00f0a8]/5 p-5">
+                <Sparkles className="h-6 w-6 text-[#00f0a8]" />
+                <p className="mt-5 text-sm font-bold leading-7 text-white/70">
+                  Good brief inputs: business type, service list, target audience, reference links, launch deadline, and must-have sections.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+          <Reveal delay={0.06}>
+            <ProjectBriefForm />
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="bg-[#080915] py-24 text-white sm:py-32">
+        <div className="container-pad">
+          <Reveal className="overflow-hidden rounded-3xl border border-white/10 bg-[#0d0f1b] shadow-[0_26px_90px_rgba(0,0,0,0.28)]">
+            <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
+              <div className="p-7 sm:p-10">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#ff7a00] text-white">
+                  <MapPin className="h-6 w-6" />
+                </div>
+                <p className="mt-7 font-mono text-xs font-bold uppercase tracking-[0.24em] text-[#00f0a8]">Find us</p>
+                <h2 className="mt-4 text-4xl font-black leading-none tracking-[-0.055em] sm:text-5xl">
+                  India-based studio. Remote-first delivery.
+                </h2>
+                <p className="mt-5 text-sm leading-7 text-white/56">
+                  DesignstryX works remotely across India. Map is added for local service-area clarity and quick directions.
+                </p>
+                <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/36">Location</p>
+                  <p className="mt-3 text-base font-black leading-7 text-white">{siteConfig.address}</p>
+                </div>
                 <a
                   href={directionsUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-gold px-6 text-sm font-bold text-ink shadow-glow transition hover:-translate-y-0.5 hover:bg-[#D8BB7D]"
+                  className="mt-6 inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-white px-6 text-sm font-black text-[#05060d] transition hover:-translate-y-1 hover:bg-[#ff7a00] hover:text-white"
                 >
+                  Open Google Maps
                   <Navigation className="h-4 w-4" />
-                  Open directions
                   <ExternalLink className="h-4 w-4" />
                 </a>
-                <a
-                  href={siteConfig.phoneHref}
-                  className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-pearl/25 px-6 text-sm font-bold text-pearl transition hover:-translate-y-0.5 hover:bg-pearl hover:text-forest"
-                >
-                  <Phone className="h-4 w-4" />
-                  Call before visit
-                </a>
+              </div>
+              <div className="relative min-h-[440px] bg-[#05060d]">
+                <iframe
+                  title="DesignstryX location map"
+                  src={mapEmbedUrl}
+                  className="absolute inset-0 h-full w-full border-0 grayscale-[25%] invert-[0.88] hue-rotate-180"
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,transparent_45%,rgba(5,6,13,0.42)_100%)]" />
               </div>
             </div>
-            <div className="relative min-h-[440px] bg-mist">
-              <iframe
-                title="Healing Foundation location map"
-                src={mapEmbedUrl}
-                className="absolute inset-0 h-full w-full border-0 grayscale-[15%]"
-                loading="lazy"
-                allowFullScreen
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-              <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/30 to-transparent" />
-            </div>
-          </div>
-        </Reveal>
-      </section>
-      <BeforeYouVisit />
-      <section className="container-pad pb-20">
-        <div className="overflow-hidden rounded-lg bg-forest p-8 text-pearl shadow-soft md:p-12">
-          <p className="eyebrow text-sand">Privacy Note</p>
-          <h2 className="mt-3 font-serif text-4xl font-semibold">Every enquiry is handled discreetly.</h2>
-          <p className="mt-4 max-w-3xl text-base leading-8 text-pearl/70">
-            Calls, WhatsApp messages, emails, and enquiry form submissions are intended for private admissions guidance. Share only what feels comfortable during the first conversation.
-          </p>
+          </Reveal>
         </div>
       </section>
     </>

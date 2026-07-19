@@ -11,7 +11,7 @@ export function Footer() {
           <div>
             <Link href="/" className="inline-flex items-center gap-3">
               <span className="relative grid h-16 w-16 place-items-center overflow-hidden rounded-2xl border border-white/12 bg-black shadow-[0_0_36px_rgba(255,122,0,0.22)]">
-                <Image src={siteConfig.logo} alt={`${siteConfig.name} logo`} fill sizes="64px" className="object-cover" />
+                <Image src={siteConfig.logo} alt={`${siteConfig.name} logo`} fill sizes="64px" className="object-contain p-1" />
               </span>
               <span>
                 <span className="block text-2xl font-black uppercase tracking-[-0.05em]">{siteConfig.name}</span>

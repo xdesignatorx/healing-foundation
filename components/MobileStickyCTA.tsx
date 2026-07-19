@@ -12,7 +12,7 @@ export function MobileStickyCTA() {
         <a
           href={siteConfig.phoneHref}
           className="inline-flex h-11 items-center justify-center gap-1.5 rounded-md bg-forest text-xs font-bold text-white"
-          aria-label="Call Healing Foundation"
+          aria-label="Call DesignstryX"
         >
           <Phone className="h-4 w-4" />
           Call
