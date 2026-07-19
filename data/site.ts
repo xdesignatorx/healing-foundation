@@ -20,8 +20,8 @@ export const siteConfig = {
   description:
     "DesignstryX is a Udyam-registered design and development agency creating premium websites, UI/UX, brand identity, marketing creatives, and launch-ready digital experiences.",
   url: "https://healing-foundation.vercel.app",
-  logo: "/images/brand/healing-foundation-logo.png",
-  ogImage: "/images/centre/ethos-team.png",
+  logo: "/images/brand/designstryx-logo.png",
+  ogImage: "/images/brand/designstryx-logo.png",
   phone: "+91 98169 44777",
   secondaryPhone: "+91 98160 07464",
   phoneNumbers: ["+91 98169 44777", "+91 98160 07464"],
@@ -39,7 +39,7 @@ export const siteConfig = {
 
 export const navItems = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/#services" },
+  { label: "Services", href: "/services" },
   { label: "Work", href: "/#work" },
   { label: "Process", href: "/#process" },
   { label: "Contact", href: "/#contact" }
@@ -169,7 +169,7 @@ export const facilities = [
 export const megaMenu = {
   treatments: treatments.slice(0, 6).map((item) => ({
     label: item.title,
-    href: "/#services",
+    href: `/services/${item.slug}`,
     description: item.summary,
     icon: item.icon
   })),

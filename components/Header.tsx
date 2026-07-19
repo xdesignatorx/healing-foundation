@@ -1,6 +1,7 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -10,6 +11,8 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
 
   useEffect(() => {
     const updateScrolled = () => setScrolled(window.scrollY > 18);
@@ -24,13 +27,20 @@ export function Header() {
         <div
           className={`pointer-events-auto mx-auto mt-5 flex max-w-7xl items-center justify-between rounded-2xl border px-4 py-3 backdrop-blur-2xl transition duration-300 ${
             scrolled
-              ? "border-white/12 bg-[#070812]/88 shadow-[0_18px_60px_rgba(0,0,0,0.35)]"
-              : "border-white/8 bg-[#080915]/48"
+              ? "border-white/18 bg-[#070812]/92 shadow-[0_18px_60px_rgba(0,0,0,0.45)]"
+              : "border-white/22 bg-[#05060d]/82 shadow-[0_18px_70px_rgba(0,0,0,0.32)]"
           }`}
         >
           <Link href="/" className="flex min-w-0 items-center gap-3">
-            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-gradient-to-br from-[#ff7a00] to-[#d95700] text-xl font-black text-white shadow-[0_0_30px_rgba(255,112,0,0.35)]">
-              D
+            <span className="relative grid h-12 w-12 shrink-0 place-items-center overflow-hidden rounded-xl border border-white/12 bg-black shadow-[0_0_30px_rgba(255,112,0,0.26)]">
+              <Image
+                src={siteConfig.logo}
+                alt={`${siteConfig.name} logo`}
+                fill
+                sizes="48px"
+                className="object-cover"
+                priority
+              />
             </span>
             <span className="min-w-0">
               <span className="block truncate text-xl font-black uppercase tracking-[-0.04em] text-white">
@@ -42,15 +52,15 @@ export function Header() {
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-9 lg:flex">
+          <nav className="hidden items-center gap-2 rounded-full border border-white/10 bg-black/22 px-2 py-2 lg:flex">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-sm font-bold transition ${
-                  pathname === item.href
-                    ? "text-[#ff7a00]"
-                    : "text-white/58 hover:text-[#ff7a00]"
+                className={`rounded-full px-5 py-2.5 text-sm font-black transition ${
+                  isActive(item.href)
+                    ? "bg-[#ff7a00] text-white shadow-[0_0_24px_rgba(255,122,0,0.32)]"
+                    : "text-white/78 hover:bg-white/8 hover:text-white"
                 }`}
               >
                 {item.label}

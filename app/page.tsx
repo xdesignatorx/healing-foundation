@@ -3,37 +3,18 @@ import {
   BarChart3,
   Bot,
   BrainCircuit,
-  Brush,
   CheckCircle2,
-  Code2,
-  Globe2,
-  Layers3,
   Mail,
-  Megaphone,
   MessageCircle,
-  Palette,
   Phone,
-  Play,
   Rocket,
   Search,
-  ShoppingBag,
-  Wand2,
 } from "lucide-react";
+import Link from "next/link";
 import { Reveal } from "@/components/Motion";
 import { FAQAccordion } from "@/components/FAQAccordion";
+import { agencyServices } from "@/data/services";
 import { siteConfig } from "@/data/site";
-
-const services = [
-  ["Website Design", "Premium websites, landing pages, portfolio sites, and conversion-focused web experiences.", Globe2],
-  ["AI-Ready Web Development", "Next.js, React, Tailwind, motion, forms, SEO metadata, and Vercel deployment.", Code2],
-  ["UI/UX Systems", "Dashboards, apps, SaaS screens, prototypes, and product journeys that feel effortless.", Layers3],
-  ["Brand Identity", "Logo direction, typography, color systems, social identity, and launch-ready brand kits.", Palette],
-  ["Marketing Creatives", "Ads, banners, campaign graphics, thumbnails, posters, and high-impact launch visuals.", Megaphone],
-  ["Graphic Design", "Brochures, decks, flyers, print assets, and business collateral with premium polish.", Brush],
-  ["No-Code MVPs", "Fast business tools, forms, lead funnels, content microsites, and automation-ready pages.", Wand2],
-  ["Motion & Video", "Animated web sections, UI motion, simple promo videos, and scroll-driven visual energy.", Play],
-  ["Ecommerce UI", "Product pages, storefront layouts, offer pages, and conversion-focused shopping journeys.", ShoppingBag]
-] as const;
 
 const metrics = [
   ["LIVE CTR", "8.4%", "+2.1% vs last week", "left-[3%] top-[43%]"],
@@ -135,13 +116,13 @@ export default function Home() {
                 Get Started
                 <ArrowRight className="h-4 w-4" />
               </a>
-              <a
-                href="#services"
+              <Link
+                href="/services"
                 className="inline-flex h-14 items-center justify-center gap-2 rounded-lg border border-white/12 bg-white/5 px-7 text-sm font-black text-white transition hover:-translate-y-1 hover:bg-white hover:text-[#05060d]"
               >
                 Explore Services
                 <Search className="h-4 w-4" />
-              </a>
+              </Link>
             </div>
           </Reveal>
         </div>
@@ -171,9 +152,15 @@ export default function Home() {
           </Reveal>
 
           <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {services.map(([title, text, Icon], index) => (
-              <Reveal key={title} delay={(index % 3) * 0.04}>
-                <article className="group relative min-h-72 overflow-hidden rounded-2xl border border-white/10 bg-[#0d0f1b] p-7 transition hover:-translate-y-1 hover:border-[#ff7a00]/50 hover:bg-[#111420]">
+            {agencyServices.map((service, index) => {
+              const Icon = service.icon;
+
+              return (
+              <Reveal key={service.slug} delay={(index % 3) * 0.04}>
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="group relative block min-h-72 overflow-hidden rounded-2xl border border-white/10 bg-[#0d0f1b] p-7 transition hover:-translate-y-1 hover:border-[#ff7a00]/50 hover:bg-[#111420]"
+                >
                   <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#0d65ff] to-transparent opacity-0 transition group-hover:opacity-100" />
                   <div className="flex items-start justify-between">
                     <span className="grid h-12 w-12 place-items-center rounded-xl border border-white/10 bg-white/5 text-[#ff7a00]">
@@ -181,11 +168,16 @@ export default function Home() {
                     </span>
                     <span className="font-mono text-xs text-white/30">0{index + 1}</span>
                   </div>
-                  <h3 className="mt-14 text-3xl font-black tracking-[-0.04em]">{title}</h3>
-                  <p className="mt-4 text-sm leading-7 text-white/52">{text}</p>
-                </article>
+                  <h3 className="mt-14 text-3xl font-black tracking-[-0.04em]">{service.title}</h3>
+                  <p className="mt-4 text-sm leading-7 text-white/52">{service.summary}</p>
+                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-black text-[#ff7a00]">
+                    View service
+                    <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                  </span>
+                </Link>
               </Reveal>
-            ))}
+            );
+            })}
           </div>
         </div>
       </section>

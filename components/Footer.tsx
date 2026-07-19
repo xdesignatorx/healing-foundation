@@ -1,4 +1,5 @@
 import { ArrowRight, Mail, Phone } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { navItems, siteConfig } from "@/data/site";
 
@@ -9,8 +10,8 @@ export function Footer() {
         <div className="grid gap-12 border-b border-white/12 pb-14 lg:grid-cols-[1.1fr_0.55fr_0.85fr]">
           <div>
             <Link href="/" className="inline-flex items-center gap-3">
-              <span className="grid h-14 w-14 place-items-center rounded-full bg-[#d5ff65] text-xl font-black tracking-[-0.08em] text-[#080808]">
-                DX
+              <span className="relative grid h-16 w-16 place-items-center overflow-hidden rounded-2xl border border-white/12 bg-black shadow-[0_0_36px_rgba(255,122,0,0.22)]">
+                <Image src={siteConfig.logo} alt={`${siteConfig.name} logo`} fill sizes="64px" className="object-cover" />
               </span>
               <span>
                 <span className="block text-2xl font-black uppercase tracking-[-0.05em]">{siteConfig.name}</span>

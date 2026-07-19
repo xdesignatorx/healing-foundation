@@ -5,14 +5,14 @@ export const dynamic = "force-static";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: `${siteConfig.name} Wellness Residence`,
+    name: `${siteConfig.name} Digital Studio`,
     short_name: siteConfig.name,
     description: siteConfig.description,
     start_url: "/",
     scope: "/",
     display: "standalone",
-    background_color: "#F8F6F2",
-    theme_color: "#1F4D3A",
+    background_color: "#05060d",
+    theme_color: "#ff7a00",
     icons: [
       {
         src: siteConfig.logo,

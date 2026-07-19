@@ -1,14 +1,13 @@
-const CACHE_NAME = "healing-foundation-v1";
+const CACHE_NAME = "designstryx-v2";
 const CORE_ASSETS = [
   "/",
   "/about",
-  "/treatments",
-  "/facilities",
+  "/services",
   "/gallery",
   "/blog",
   "/contact",
   "/brochure",
-  "/images/brand/healing-foundation-logo.png"
+  "/images/brand/designstryx-logo.png"
 ];
 
 self.addEventListener("install", (event) => {
