@@ -17,10 +17,10 @@ import { agencyServices } from "@/data/services";
 import { siteConfig } from "@/data/site";
 
 const metrics = [
-  ["LIVE CTR", "8.4%", "+2.1% vs last week", "left-[3%] top-[43%]"],
-  ["LEADS TODAY", "342", "+18 in last hour", "right-[4%] top-[49%]"],
-  ["ROAS", "4.8x", "Optimizing", "left-[5%] bottom-[4%]"],
-  ["CAMPAIGNS", "847", "AI assisted", "right-[5%] bottom-[7%]"]
+  ["LIVE CTR", "8.4%", "+2.1% vs last week", "left-[3%] top-[43%]", "/services"],
+  ["LEADS TODAY", "342", "+18 in last hour", "right-[4%] top-[49%]", "/contact"],
+  ["ROAS", "4.8x", "Optimizing", "left-[5%] bottom-[4%]", "/process"],
+  ["CAMPAIGNS", "847", "AI assisted", "right-[5%] bottom-[7%]", "/services"]
 ] as const;
 
 const process = [
@@ -62,33 +62,38 @@ export default function Home() {
         <div className="orbit orbit-one" />
         <div className="orbit orbit-two" />
 
-        {metrics.map(([label, value, sub, position]) => (
-          <div
+        {metrics.map(([label, value, sub, position, href]) => (
+          <Link
             key={label}
-            className={`pointer-events-none absolute hidden rounded-2xl border border-white/10 bg-[#10111d]/80 px-5 py-4 shadow-[0_18px_50px_rgba(0,0,0,0.28)] backdrop-blur-xl xl:block ${position}`}
+            href={href}
+            className={`group absolute hidden rounded-2xl border border-white/10 bg-[#10111d]/80 px-5 py-4 shadow-[0_18px_50px_rgba(0,0,0,0.28)] backdrop-blur-xl transition hover:-translate-y-1 hover:border-[#ff7a00]/45 hover:bg-[#151827] xl:block ${position}`}
+            aria-label={`${label} - view details`}
           >
             <p className="font-mono text-xs uppercase tracking-[0.18em] text-white/52">{label}</p>
             <p className="mt-3 text-2xl font-black">{value}</p>
             <p className="mt-1 font-mono text-xs text-[#00f0a8]">{sub}</p>
-          </div>
+            <span className="mt-3 inline-flex items-center gap-1 text-xs font-black text-[#ff7a00] opacity-0 transition group-hover:opacity-100">
+              Open <ArrowRight className="h-3 w-3" />
+            </span>
+          </Link>
         ))}
 
         <div className="absolute right-[4%] top-[13%] hidden space-y-3 xl:block">
-          <div className="rounded-lg border border-[#00f0a8]/25 bg-[#00f0a8]/5 px-5 py-3 font-mono text-xs font-bold uppercase tracking-[0.22em] text-[#00f0a8]">
+          <Link href="/process" className="block rounded-lg border border-[#00f0a8]/25 bg-[#00f0a8]/5 px-5 py-3 font-mono text-xs font-bold uppercase tracking-[0.22em] text-[#00f0a8] transition hover:-translate-y-0.5 hover:bg-[#00f0a8]/10">
             <span className="mr-2 inline-block h-2.5 w-2.5 rounded-full bg-[#00f0a8] shadow-[0_0_18px_#00f0a8]" />
             AI system online
-          </div>
-          <div className="rounded-lg border border-white/10 bg-white/5 px-5 py-3 font-mono text-xs uppercase tracking-[0.22em] text-white/60">
+          </Link>
+          <Link href="/process" className="block rounded-lg border border-white/10 bg-white/5 px-5 py-3 font-mono text-xs uppercase tracking-[0.22em] text-white/60 transition hover:-translate-y-0.5 hover:border-[#ff7a00]/35 hover:text-white">
             <span className="mr-2 inline-block h-2.5 w-2.5 rounded-full bg-[#ff7a00] shadow-[0_0_18px_#ff7a00]" />
             Trusted build workflow
-          </div>
+          </Link>
         </div>
 
         <div className="container-pad relative flex min-h-[calc(100vh-7rem)] items-center justify-center pb-16">
           <Reveal className="mx-auto max-w-6xl text-center">
-            <div className="mx-auto mb-12 w-fit rounded-md border border-[#0d65ff]/35 bg-[#0d65ff]/10 px-5 py-3 font-mono text-sm text-[#0d65ff] shadow-[0_0_45px_rgba(13,101,255,0.18)]">
+            <Link href="/services" className="mx-auto mb-12 inline-flex w-fit items-center rounded-md border border-[#0d65ff]/35 bg-[#0d65ff]/10 px-5 py-3 font-mono text-sm text-[#0d65ff] shadow-[0_0_45px_rgba(13,101,255,0.18)] transition hover:-translate-y-0.5 hover:border-[#ff7a00]/45 hover:text-[#ff7a00]">
               AI&gt; Designing brand systems, websites, campaigns... |
-            </div>
+            </Link>
 
             <h1 className="mx-auto max-w-7xl text-[4.5rem] font-black leading-[0.95] tracking-[-0.075em] sm:text-[7rem] lg:text-[8.8rem]">
               The Next-Gen
@@ -131,10 +136,10 @@ export default function Home() {
       <section className="overflow-hidden border-y border-white/10 bg-[#070812] py-5 text-white">
         <div className="animate-marquee flex w-max gap-10 font-mono text-sm uppercase tracking-[0.24em] text-white/52">
           {["AI Website Design", "Brand Systems", "Landing Pages", "UI UX", "Creative Campaigns", "Vercel Deployment", "Motion Interfaces", "Conversion Design"].concat(["AI Website Design", "Brand Systems", "Landing Pages", "UI UX", "Creative Campaigns", "Vercel Deployment", "Motion Interfaces", "Conversion Design"]).map((item, index) => (
-            <span key={`${item}-${index}`} className="inline-flex items-center gap-10">
+            <Link key={`${item}-${index}`} href="/services" className="inline-flex items-center gap-10 transition hover:text-[#ff7a00]">
               {item}
               <span className="h-2 w-2 rounded-full bg-[#ff7a00]" />
-            </span>
+            </Link>
           ))}
         </div>
       </section>

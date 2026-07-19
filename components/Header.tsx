@@ -69,10 +69,10 @@ export function Header() {
           </nav>
 
           <div className="hidden items-center gap-4 lg:flex">
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#00f0a8]/20 bg-[#00f0a8]/8 px-4 py-2 font-mono text-xs font-bold uppercase tracking-[0.18em] text-[#00f0a8]">
+            <Link href="/process" className="inline-flex items-center gap-2 rounded-full border border-[#00f0a8]/20 bg-[#00f0a8]/8 px-4 py-2 font-mono text-xs font-bold uppercase tracking-[0.18em] text-[#00f0a8] transition hover:-translate-y-0.5 hover:bg-[#00f0a8]/12">
               <span className="h-2 w-2 rounded-full bg-[#00f0a8] shadow-[0_0_18px_#00f0a8]" />
               AI live
-            </span>
+            </Link>
             <a
               href={siteConfig.whatsapp}
               target="_blank"
